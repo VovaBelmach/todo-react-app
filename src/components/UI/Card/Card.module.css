@@ -1,0 +1,48 @@
+.card {
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.card.selected {
+    background-color: #f2f2f2;
+}
+
+.card:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card li {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.card li:last-child {
+    border-bottom: none;
+}
+
+.card input[type="text"] {
+    font: inherit;
+    display: block;
+    width: 90%;
+    padding: 0.15rem;
+    border: none;
+    outline: none;
+}
+
+.card input[type="text"]:focus {
+    outline: none;
+    border-color: #4f005f;
+}

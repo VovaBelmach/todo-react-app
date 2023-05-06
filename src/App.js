@@ -1,3 +1,5 @@
+import Todos from "./components/Todos/Todos";
+
 import styles from "./App.module.css";
 
 function App() {
@@ -9,6 +11,7 @@ function App() {
           <header>
             <h1 className={styles.title}>TODO</h1>
           </header>
+          <Todos />
         </main>
       </div>
     </>
