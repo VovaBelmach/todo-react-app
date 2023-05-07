@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
 
 const initialState = {
-  todos: [],
-  filter: "",
-};
+    todos: [],
+    filterValue: "All"
+  };
 
 export const todosSlice = createSlice({
   name: "todos",
@@ -17,10 +17,12 @@ export const todosSlice = createSlice({
         isDone: false,
       };
       state.todos.push(newTodo);
+      saveTodosToLocalStorage(state.todos);
     },
     deleteTodo: (state, action) => {
       const { id } = action.payload;
       state.todos = state.todos.filter((todo) => todo.id !== id);
+      saveTodosToLocalStorage(state.todos);
     },
     checkTodo: (state, action) => {
       const index = state.todos.findIndex(
@@ -28,10 +30,11 @@ export const todosSlice = createSlice({
       );
       if (index !== -1) {
         state.todos[index].isDone = true;
+        saveTodosToLocalStorage(state.todos);
       }
     },
     setFilter: (state, action) => {
-      state.filter = action.payload;
+      state.filterValue = action.payload;
     },
   },
 });
@@ -41,8 +44,8 @@ export const { addTodo, deleteTodo, checkTodo, setFilter } = todosSlice.actions;
 export default todosSlice.reducer;
 
 export const filteredTodosSelector = (state) => {
-  const { todos, filter } = state.todos;
-  switch (filter) {
+  const { todos, filterValue } = state.todos;
+  switch (filterValue) {
     case "Active":
       return todos.filter((todo) => todo.isDone !== true);
     case "Completed":
@@ -50,4 +53,8 @@ export const filteredTodosSelector = (state) => {
     default:
       return todos;
   }
+};
+
+const saveTodosToLocalStorage = (todos) => {
+  localStorage.setItem("todos", JSON.stringify(todos));
 };
