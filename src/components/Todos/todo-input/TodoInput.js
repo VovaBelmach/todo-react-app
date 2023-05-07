@@ -25,7 +25,11 @@ const TodoInput = () => {
     <Card className={styles.todoInput}>
       <form onSubmit={onSubmitHandler}>
         <Checkbox isDisabled={true} />
-        <input type="text" placeholder="What should be done?" ref={todoInputRef} />
+        <input
+          type="text"
+          placeholder="What should be done?"
+          ref={todoInputRef}
+        />
       </form>
     </Card>
   );

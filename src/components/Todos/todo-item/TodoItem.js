@@ -16,10 +16,10 @@ const TodoItem = (props) => {
 
   const onCheckHandler = () => {
     dispatch(
-        checkTodo({
-          id: props.id,
-        })
-      );
+      checkTodo({
+        id: props.id,
+      })
+    );
   };
 
   return (
@@ -31,9 +31,7 @@ const TodoItem = (props) => {
         isDisabled={false}
         onClick={onCheckHandler}
       />
-      <label onClick={onCheckHandler}>
-        {props.description}
-      </label>
+      <label onClick={onCheckHandler}>{props.description}</label>
       <button onClick={onDeleteHandler} className={`${styles["delete-btn"]}`}>
         X
       </button>
