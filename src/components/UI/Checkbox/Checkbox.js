@@ -4,13 +4,13 @@ const Checkbox = (props) => {
   return (
     <>
       <input
-        className={styles}
         type="checkbox"
+        className={styles}
         id={props.id}
         name={props.id}
-        defaultChecked={props.isDone}
+        checked={props.isDone}
+        onChange={() => {}}
         disabled={props.isDisabled}
-        onClick={props.onClick}
       />
     </>
   );

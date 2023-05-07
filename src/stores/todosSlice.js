@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
 
 const initialState = {
-    todos: [],
-    filterValue: "All"
-  };
+  todos: [],
+  filterValue: "All",
+};
 
 export const todosSlice = createSlice({
   name: "todos",
@@ -29,7 +29,7 @@ export const todosSlice = createSlice({
         (item) => item.id === action.payload.id
       );
       if (index !== -1) {
-        state.todos[index].isDone = true;
+        state.todos[index].isDone = !state.todos[index].isDone;
         saveTodosToLocalStorage(state.todos);
       }
     },

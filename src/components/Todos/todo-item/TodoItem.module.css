@@ -6,12 +6,26 @@
     font-size: 20px;
     color: #e8e8e8;
     cursor: pointer;
+    display: none;
 }
 
 .delete-btn:hover {
     color: #ff6666;
 }
 
-label {
+li:hover .delete-btn {
+    display: inline-block;
+}
+
+li {
     cursor: pointer;
+}
+
+li label {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+li input[type="checkbox"]:checked+label {
+    text-decoration: line-through;
 }
