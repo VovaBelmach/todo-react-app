@@ -1,5 +1,5 @@
 import Button from "../../UI/Button/Button";
-import TodoFilter from "../todo-filterst/TodoFilter";
+import TodoFilter from "../todo-filter/TodoFilter";
 
 import styles from "./TodoFooter.module.css";
 
@@ -9,7 +9,7 @@ const TodoFooter = (props) => {
       <footer className={styles.todoFooter}>
         <span>{props.countTodos} item left</span>
         <TodoFilter onFilterHandler={props.onFilterHandler} />
-        <Button className="todo-clear-completed">Clear completed</Button>
+        <Button onClick={props.onDeleteCompletedTodosHandler} className="todo-clear-completed">Clear completed</Button>
       </footer>
     </>
   );
