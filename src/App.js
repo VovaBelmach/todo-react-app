@@ -12,6 +12,9 @@ function App() {
             <h1 className={styles.title}>TODO</h1>
           </header>
           <Todos />
+          <footer>
+            <p className={styles.footer}>Drag and drop to reorder list</p>
+          </footer>
         </main>
       </div>
     </>

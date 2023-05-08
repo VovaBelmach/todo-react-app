@@ -8,7 +8,7 @@ const Checkbox = (props) => {
         className={styles}
         id={props.id}
         name={props.id}
-        checked={props.isDone}
+        checked={props.isCompleted}
         onChange={() => {}}
         disabled={props.isDisabled}
       />

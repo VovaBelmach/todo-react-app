@@ -2,11 +2,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTodo, checkTodo } from "../../../stores/todosSlice";
 import Checkbox from "../../UI/Checkbox/Checkbox";
+import Button from "../../UI/Button/Button";
 import styles from "./TodoItem.module.css";
 
 const TodoItem = (props) => {
   const dispatch = useDispatch();
-  const [isCompleted, setCompletition] = useState(props.isDone);
+  const [isCompleted, setCompletition] = useState(props.isCompleted);
 
   const onDeleteHandler = (event) => {
     event.stopPropagation();
@@ -43,13 +44,13 @@ const TodoItem = (props) => {
       <Checkbox
         id={props.id}
         name={props.id}
-        isDone={isCompleted}
+        isCompleted={isCompleted}
         isDisabled={false}
       />
       <label>{props.description}</label>
-      <button onClick={onDeleteHandler} className={`${styles["delete-btn"]}`}>
+      <Button onClick={onDeleteHandler} className={`${styles["delete-btn"]}`}>
         X
-      </button>
+      </Button>
     </li>
   );
 };

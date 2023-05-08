@@ -14,7 +14,7 @@ export const todosSlice = createSlice({
       const newTodo = {
         id: uuid(),
         description: action.payload.description,
-        isDone: false,
+        isCompleted: false,
       };
       state.todos.push(newTodo);
       saveTodosToLocalStorage(state.todos);
@@ -29,7 +29,7 @@ export const todosSlice = createSlice({
         (item) => item.id === action.payload.id
       );
       if (index !== -1) {
-        state.todos[index].isDone = !state.todos[index].isDone;
+        state.todos[index].isCompleted = !state.todos[index].isCompleted;
         saveTodosToLocalStorage(state.todos);
       }
     },
@@ -37,18 +37,19 @@ export const todosSlice = createSlice({
       state.filterValue = action.payload;
     },
     reorderTodos: (state, action) => {
-        const { draggedIndex, droppedIndex } = action.payload;
-        const draggedTodo = state.todos[draggedIndex];
-        const newTodos = [...state.todos];
-        newTodos.splice(draggedIndex, 1);
-        newTodos.splice(droppedIndex, 0, draggedTodo);
-        state.todos = newTodos;
-        saveTodosToLocalStorage(state.todos);
-      }
+      const { draggedIndex, droppedIndex } = action.payload;
+      const draggedTodo = state.todos[draggedIndex];
+      const newTodos = [...state.todos];
+      newTodos.splice(draggedIndex, 1);
+      newTodos.splice(droppedIndex, 0, draggedTodo);
+      state.todos = newTodos;
+      saveTodosToLocalStorage(state.todos);
+    },
   },
 });
 
-export const { addTodo, deleteTodo, checkTodo, setFilter, reorderTodos } = todosSlice.actions;
+export const { addTodo, deleteTodo, checkTodo, setFilter, reorderTodos } =
+  todosSlice.actions;
 
 export default todosSlice.reducer;
 
@@ -56,9 +57,9 @@ export const filteredTodosSelector = (state) => {
   const { todos, filterValue } = state.todos;
   switch (filterValue) {
     case "Active":
-      return todos.filter((todo) => todo.isDone !== true);
+      return todos.filter((todo) => todo.isCompleted !== true);
     case "Completed":
-      return todos.filter((todo) => todo.isDone === true);
+      return todos.filter((todo) => todo.isCompleted === true);
     default:
       return todos;
   }

@@ -9,7 +9,12 @@ const TodoFooter = (props) => {
       <footer className={styles.todoFooter}>
         <span>{props.countTodos} item left</span>
         <TodoFilter onFilterHandler={props.onFilterHandler} />
-        <Button onClick={props.onDeleteCompletedTodosHandler} className="todo-clear-completed">Clear completed</Button>
+        <Button
+          onClick={props.onDeleteCompletedHandler}
+          className={`${styles["todo-clear-completed"]}`}
+        >
+          Clear completed
+        </Button>
       </footer>
     </>
   );

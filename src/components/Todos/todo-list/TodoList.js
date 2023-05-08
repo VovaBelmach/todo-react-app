@@ -19,9 +19,9 @@ const TodoList = () => {
     dispatch(setFilter(filterProperty));
   };
 
-  const onDeleteCompletedTodosHandler = () => {
+  const onDeleteCompletedHandler = () => {
     const completedTodoIds = filteredTodos
-      .filter((todo) => todo.isDone)
+      .filter((todo) => todo.isCompleted)
       .map((todo) => todo.id);
 
     completedTodoIds.forEach((id) => {
@@ -65,7 +65,7 @@ const TodoList = () => {
             key={todo.id}
             id={todo.id}
             index={index}
-            isDone={todo.isDone}
+            isCompleted={todo.isCompleted}
             description={todo.description}
             onDragStartHandle={onDragStartHandle}
             onDragOverHandle={onDragOverHandle}
@@ -77,7 +77,7 @@ const TodoList = () => {
       <TodoFooter
         countTodos={filteredTodos.length}
         onFilterHandler={onFilterHandler}
-        onDeleteCompletedTodosHandler={onDeleteCompletedTodosHandler}
+        onDeleteCompletedHandler={onDeleteCompletedHandler}
       />
     </Card>
   );

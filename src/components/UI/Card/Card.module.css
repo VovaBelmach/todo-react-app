@@ -20,6 +20,8 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    max-height: 250px;
+    overflow: auto;
 }
 
 .card li {
@@ -45,4 +47,23 @@
 .card input[type="text"]:focus {
     outline: none;
     border-color: #4f005f;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    /* ширина ползунка */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 3px;
+}
+
+::-ms-scrollbar {
+    width: 6px;
+}
+
+::-ms-thumb {
+    background-color: #999;
+    border-radius: 3px;
 }
