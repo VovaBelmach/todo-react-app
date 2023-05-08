@@ -75,7 +75,7 @@ const TodoList = () => {
         ))}
       </ul>
       <TodoFooter
-        countTodos={filteredTodos.length}
+        countTodos={filteredTodos.filter(todo => !todo.isCompleted).length}
         onFilterHandler={onFilterHandler}
         onDeleteCompletedHandler={onDeleteCompletedHandler}
       />
