@@ -4,10 +4,13 @@ import TodoFilter from "../todo-filter/TodoFilter";
 import styles from "./TodoFooter.module.css";
 
 const TodoFooter = (props) => {
+  const todoCount = props.countTodos;
+  const spanContent = todoCount === 0 ? "All done!" : `${todoCount} todo left`;
+
   return (
     <>
       <footer className={styles.todoFooter}>
-        <span>{props.countTodos} item left</span>
+        <span>{spanContent}</span>
         <TodoFilter onFilterHandler={props.onFilterHandler} />
         <Button
           onClick={props.onDeleteCompletedHandler}
