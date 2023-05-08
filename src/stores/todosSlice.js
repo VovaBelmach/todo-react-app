@@ -24,7 +24,7 @@ export const todosSlice = createSlice({
       state.todos = state.todos.filter((todo) => todo.id !== id);
       saveTodosToLocalStorage(state.todos);
     },
-    checkTodo: (state, action) => {
+    completeTodo: (state, action) => {
       const index = state.todos.findIndex(
         (item) => item.id === action.payload.id
       );
@@ -48,7 +48,7 @@ export const todosSlice = createSlice({
   },
 });
 
-export const { addTodo, deleteTodo, checkTodo, setFilter, reorderTodos } =
+export const { addTodo, deleteTodo, completeTodo, setFilter, reorderTodos } =
   todosSlice.actions;
 
 export default todosSlice.reducer;

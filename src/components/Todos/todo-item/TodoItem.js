@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { deleteTodo, checkTodo } from "../../../stores/todosSlice";
+import { deleteTodo, completeTodo } from "../../../stores/todosSlice";
 import Checkbox from "../../UI/Checkbox/Checkbox";
 import Button from "../../UI/Button/Button";
 import styles from "./TodoItem.module.css";
@@ -18,9 +18,9 @@ const TodoItem = (props) => {
     );
   };
 
-  const onCheckHandler = () => {
+  const onCompleteHandler = () => {
     dispatch(
-      checkTodo({
+      completeTodo({
         id: props.id,
       })
     );
@@ -35,7 +35,7 @@ const TodoItem = (props) => {
       onDragOver={props.onDragOverHandle}
       onDrop={(event) => props.onDropHandle(event, props.index)}
       onDragEnd={props.onDragEndHandle}
-      onClick={onCheckHandler}
+      onClick={onCompleteHandler}
       style={{
         opacity: props.draggedIndex === props.index ? 0.5 : 1,
         cursor: "move",

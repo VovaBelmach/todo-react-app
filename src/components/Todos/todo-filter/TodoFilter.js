@@ -1,5 +1,4 @@
 import Button from "../../UI/Button/Button";
-
 import styles from "./TodoFilter.module.css";
 
 const TodoFilter = (props) => {

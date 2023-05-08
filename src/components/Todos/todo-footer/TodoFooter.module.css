@@ -11,15 +11,6 @@
     color: #999;
 }
 
-.todo-filter:hover {
-    color: #333;
-}
-
-.todo-filter.active,
-.todo-filter.completed {
-    color: #333;
-}
-
 .todo-clear-completed:hover {
     color: #f44336;
 }

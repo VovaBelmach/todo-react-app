@@ -16,12 +16,3 @@
 li:hover .delete-btn {
     display: inline-block;
 }
-
-li label {
-    text-decoration: none;
-    cursor: pointer;
-}
-
-li input[type="checkbox"]:checked+label {
-    text-decoration: line-through;
-}
