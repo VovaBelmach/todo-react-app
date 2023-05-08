@@ -36,10 +36,19 @@ export const todosSlice = createSlice({
     setFilter: (state, action) => {
       state.filterValue = action.payload;
     },
+    reorderTodos: (state, action) => {
+        const { draggedIndex, droppedIndex } = action.payload;
+        const draggedTodo = state.todos[draggedIndex];
+        const newTodos = [...state.todos];
+        newTodos.splice(draggedIndex, 1);
+        newTodos.splice(droppedIndex, 0, draggedTodo);
+        state.todos = newTodos;
+        saveTodosToLocalStorage(state.todos);
+      }
   },
 });
 
-export const { addTodo, deleteTodo, checkTodo, setFilter } = todosSlice.actions;
+export const { addTodo, deleteTodo, checkTodo, setFilter, reorderTodos } = todosSlice.actions;
 
 export default todosSlice.reducer;
 

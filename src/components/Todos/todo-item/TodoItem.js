@@ -27,7 +27,19 @@ const TodoItem = (props) => {
   };
 
   return (
-    <li onClick={onCheckHandler}>
+    <li
+      key={props.id}
+      draggable
+      onDragStart={(event) => props.onDragStartHandle(event, props.index)}
+      onDragOver={props.onDragOverHandle}
+      onDrop={(event) => props.onDropHandle(event, props.index)}
+      onDragEnd={props.onDragEndHandle}
+      onClick={onCheckHandler}
+      style={{
+        opacity: props.draggedIndex === props.index ? 0.5 : 1,
+        cursor: "move",
+      }}
+    >
       <Checkbox
         id={props.id}
         name={props.id}

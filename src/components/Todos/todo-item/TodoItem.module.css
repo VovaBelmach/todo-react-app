@@ -17,10 +17,6 @@ li:hover .delete-btn {
     display: inline-block;
 }
 
-li {
-    cursor: pointer;
-}
-
 li label {
     text-decoration: none;
     cursor: pointer;
