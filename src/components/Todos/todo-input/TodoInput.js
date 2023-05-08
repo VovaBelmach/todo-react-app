@@ -45,7 +45,7 @@ const TodoInput = () => {
           onChange={onChangeHandler}
         />
       </form>
-      <p className={styles.errorMessage}>{error}</p>
+      <span className={styles.errorMessage}>{error}</span>
     </Card>
   );
 };

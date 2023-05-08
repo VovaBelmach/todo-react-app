@@ -13,7 +13,6 @@ const TodoFilter = (props) => {
           <Button
             onClick={onClickHandler}
             value="All"
-            className="todo-filter all"
           >
             All
           </Button>
@@ -22,7 +21,6 @@ const TodoFilter = (props) => {
           <Button
             onClick={onClickHandler}
             value="Active"
-            className="todo-filter all"
           >
             Active
           </Button>
@@ -31,7 +29,6 @@ const TodoFilter = (props) => {
           <Button
             onClick={onClickHandler}
             value="Completed"
-            className="todo-filter all"
           >
             Completed
           </Button>

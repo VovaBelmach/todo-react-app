@@ -36,10 +36,7 @@ const TodoItem = (props) => {
       onDrop={(event) => props.onDropHandle(event, props.index)}
       onDragEnd={props.onDragEndHandle}
       onClick={onCompleteHandler}
-      style={{
-        opacity: props.draggedIndex === props.index ? 0.5 : 1,
-        cursor: "move",
-      }}
+      style={{ opacity: props.draggedIndex === props.index ? 0.5 : 1 }}
     >
       <Checkbox
         id={props.id}

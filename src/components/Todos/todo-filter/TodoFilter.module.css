@@ -11,11 +11,10 @@
     border-bottom: 0;
 }
 
-.todo-filter:hover {
+.todoFilters button:hover {
     color: #333;
 }
 
-.todo-filter.active,
-.todo-filter.completed {
-    color: #333;
+.todoFilters button:active {
+    color: #000000;
 }
