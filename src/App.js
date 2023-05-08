@@ -5,9 +5,9 @@ import styles from "./App.module.css";
 function App() {
   return (
     <>
-      <div className={styles.appHeader} />
+      <div className={`${styles["app-header"]}`} />
       <div className={styles.app}>
-        <main className={styles.appContent}>
+        <main className={`${styles["app-content"]}`}>
           <header>
             <h1 className={styles.title}>TODO</h1>
           </header>

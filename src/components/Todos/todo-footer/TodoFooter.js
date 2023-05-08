@@ -9,7 +9,7 @@ const TodoFooter = (props) => {
 
   return (
     <>
-      <footer className={styles.todoFooter}>
+      <footer className={`${styles["todo-footer"]}`}>
         <span>{spanContent}</span>
         <TodoFilter onFilterHandler={props.onFilterHandler} />
         <Button

@@ -1,20 +1,20 @@
-.todoFilters {
+.todo-filter {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-.todoFilters li {
+.todo-filter li {
     margin-right: 5px;
     padding: 0;
     border-bottom: 0;
 }
 
-.todoFilters button:hover {
+.todo-filter button:hover {
     color: #333;
 }
 
-.todoFilters button:active {
-    color: #000000;
+.todo-filter button:active {
+    color: #000;
 }

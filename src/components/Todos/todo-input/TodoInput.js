@@ -35,7 +35,7 @@ const TodoInput = () => {
   };
 
   return (
-    <Card className={styles.todoInput}>
+    <Card className={`${styles["todo-input"]}`}>
       <form onSubmit={onSubmitHandler}>
         <Checkbox isDisabled={true} />
         <input
@@ -45,7 +45,7 @@ const TodoInput = () => {
           onChange={onChangeHandler}
         />
       </form>
-      <span className={styles.errorMessage}>{error}</span>
+      <span className={`${styles["error-message"]}`}>{error}</span>
     </Card>
   );
 };
