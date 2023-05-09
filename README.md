@@ -1,6 +1,6 @@
 # Simply Todo application
 
-This is a simple react application made with React.
+This is a simple react application made with React. [Demo link](https://ubelmach.github.io/todo-react-app/)
 ![image](https://user-images.githubusercontent.com/14176737/237050242-c691c12e-9f93-4577-a68a-3d0357c554e1.png)
 
 ## The following functionality is implemented:
