@@ -19,7 +19,9 @@ const TodoItem = (props) => {
     );
   };
 
-  const onCompleteHandler = () => {
+  const onCompleteHandler = (event) => {
+    console.log('onCompleteHandler');
+    event.stopPropagation();
     dispatch(
       completeTodo({
         id: props.id,
@@ -37,7 +39,6 @@ const TodoItem = (props) => {
       onDragOver={props.onDragOverHandle}
       onDrop={(event) => props.onDropHandle(event, props.index)}
       onDragEnd={props.onDragEndHandle}
-      onClick={onCompleteHandler}
       style={{ opacity: props.draggedIndex === props.index ? 0.5 : 1 }}
     >
       <Checkbox
@@ -45,8 +46,9 @@ const TodoItem = (props) => {
         name={props.id}
         isCompleted={isCompleted}
         isDisabled={false}
+        onClick={onCompleteHandler}
       />
-      <label>{props.description}</label>
+      <label htmlFor={props.id}>{props.description}</label>
       <Button className={styles["delete-btn"]} onClick={onDeleteHandler}>
         X
       </Button>

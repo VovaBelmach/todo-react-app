@@ -10,6 +10,7 @@ const Checkbox = (props) => {
         name={props.id}
         checked={props.isCompleted}
         onChange={() => {}}
+        onClick={props.onClick}
         disabled={props.isDisabled}
       />
     </>
