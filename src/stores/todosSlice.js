@@ -1,15 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
 import { saveItemsToLocalStorage } from "../repositories/localStorageRepository";
-import { TODOS_LOCAL_STORAGE_NAME } from "../constants";
+import {
+  TODOS_LOCAL_STORAGE_NAME,
+  TODO_FILTER_ALL_BUTTON_NAME,
+  TODO_FILTER_ACTIVE_BUTTON_NAME,
+  TODO_FILTER_COMPLITED_BUTTON_NAME
+} from "../constants";
 
 const initialState = {
   todos: [],
-  filterValue: "All",
+  filterValue: TODO_FILTER_ALL_BUTTON_NAME,
 };
 
 export const todosSlice = createSlice({
-  name: "todos",
+  name: TODOS_LOCAL_STORAGE_NAME,
   initialState: initialState,
   reducers: {
     addTodo: (state, action) => {
@@ -58,9 +63,9 @@ export default todosSlice.reducer;
 export const filteredTodosSelector = (state) => {
   const { todos, filterValue } = state.todos;
   switch (filterValue) {
-    case "Active":
+    case TODO_FILTER_ACTIVE_BUTTON_NAME:
       return todos.filter((todo) => todo.isCompleted !== true);
-    case "Completed":
+    case TODO_FILTER_COMPLITED_BUTTON_NAME:
       return todos.filter((todo) => todo.isCompleted === true);
     default:
       return todos;

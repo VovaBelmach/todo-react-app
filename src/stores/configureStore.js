@@ -1,15 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
 import todoReducer from "./todosSlice";
 import { getItemsFromLocalStorage } from "../repositories/localStorageRepository";
-import { TODOS_LOCAL_STORAGE_NAME } from "../constants";
+import {
+  TODOS_LOCAL_STORAGE_NAME,
+  TODO_FILTER_ALL_BUTTON_NAME,
+} from "../constants";
 
-const loadTodosStateFromLocalStorage = () => {
+export const loadTodosStateFromLocalStorage = () => {
   const storedTodos = getItemsFromLocalStorage(TODOS_LOCAL_STORAGE_NAME);
   if (storedTodos) {
     return {
       todos: {
         todos: JSON.parse(storedTodos),
-        filterValue: "All",
+        filterValue: TODO_FILTER_ALL_BUTTON_NAME,
       },
     };
   }
