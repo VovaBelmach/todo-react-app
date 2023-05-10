@@ -6,8 +6,9 @@ import Button from "../../UI/Button/Button";
 import styles from "./TodoItem.module.css";
 
 const TodoItem = (props) => {
-  const dispatch = useDispatch();
   const [isCompleted, setCompletition] = useState(props.isCompleted);
+  const dispatch = useDispatch();
+  const role = "todo-item";
 
   const onDeleteHandler = (event) => {
     event.stopPropagation();
@@ -29,6 +30,7 @@ const TodoItem = (props) => {
 
   return (
     <li
+      role={role}
       key={props.id}
       draggable
       onDragStart={(event) => props.onDragStartHandle(event, props.index)}
@@ -45,7 +47,7 @@ const TodoItem = (props) => {
         isDisabled={false}
       />
       <label>{props.description}</label>
-      <Button onClick={onDeleteHandler} className={styles['delete-btn']}>
+      <Button className={styles["delete-btn"]} onClick={onDeleteHandler}>
         X
       </Button>
     </li>

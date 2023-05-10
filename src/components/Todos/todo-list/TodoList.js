@@ -9,6 +9,7 @@ import {
 import TodoItem from "../todo-item/TodoItem";
 import TodoFooter from "../todo-footer/TodoFooter";
 import Card from "../../UI/Card/Card";
+import styles from "./TodoList.module.css";
 
 const TodoList = () => {
   const filteredTodos = useSelector(filteredTodosSelector);
@@ -58,24 +59,30 @@ const TodoList = () => {
   };
 
   return (
-    <Card>
-      <ul>
-        {filteredTodos.map((todo, index) => (
-          <TodoItem
-            key={todo.id}
-            id={todo.id}
-            index={index}
-            isCompleted={todo.isCompleted}
-            description={todo.description}
-            onDragStartHandle={onDragStartHandle}
-            onDragOverHandle={onDragOverHandle}
-            onDropHandle={onDropHandle}
-            onDragEndHandle={onDragEndHandle}
-          />
-        ))}
-      </ul>
+    <Card className={styles["todo-list"]}>
+      {filteredTodos.length === 0 && (
+        <p>All todos completed! Add a todo and it will be displayed here.</p>
+      )}
+      {filteredTodos.length > 0 && (
+        <ul>
+          {filteredTodos.map((todo, index) => (
+            <TodoItem
+              key={todo.id}
+              id={todo.id}
+              index={index}
+              isCompleted={todo.isCompleted}
+              description={todo.description}
+              onDragStartHandle={onDragStartHandle}
+              onDragOverHandle={onDragOverHandle}
+              onDropHandle={onDropHandle}
+              onDragEndHandle={onDragEndHandle}
+            />
+          ))}
+        </ul>
+      )}
+
       <TodoFooter
-        countTodos={filteredTodos.filter(todo => !todo.isCompleted).length}
+        countTodos={filteredTodos.filter((todo) => !todo.isCompleted).length}
         onFilterHandler={onFilterHandler}
         onDeleteCompletedHandler={onDeleteCompletedHandler}
       />

@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "../../../stores/configureStore";
 import TodoInput from "./TodoInput";
 
-describe("TodoInput", () => {
+describe("TodoInput component", () => {
   it("should render the TodoInput component", () => {
     render(
       <Provider store={store}>
