@@ -36,7 +36,7 @@ const TodoInput = () => {
 
   return (
     <Card className={styles['todo-input']}>
-      <form onSubmit={onSubmitHandler}>
+      <form aria-label="form" onSubmit={onSubmitHandler}>
         <Checkbox isDisabled={true} />
         <input
           type="text"

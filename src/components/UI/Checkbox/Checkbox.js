@@ -5,7 +5,7 @@ const Checkbox = (props) => {
     <>
       <input
         type="checkbox"
-        className={styles}
+        className={styles.checkbox}
         id={props.id}
         name={props.id}
         checked={props.isCompleted}

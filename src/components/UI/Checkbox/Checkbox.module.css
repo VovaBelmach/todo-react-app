@@ -1,4 +1,4 @@
-input[type="checkbox"] {
+.checkbox {
     appearance: none;
     border: 2px solid #ccc;
     border-radius: 50%;
@@ -9,7 +9,7 @@ input[type="checkbox"] {
     position: relative;
 }
 
-input[type="checkbox"]:checked::before {
+.checkbox:checked::before {
     content: "";
     display: block;
     position: absolute;
@@ -18,7 +18,7 @@ input[type="checkbox"]:checked::before {
     border-radius: 50%;
 }
 
-input[type="checkbox"]:disabled {
-    background-color: #e7e7e7;
+.checkbox:disabled {
+    background-color: #a1a1a1;
     cursor: not-allowed;
 }
