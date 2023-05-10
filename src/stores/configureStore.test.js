@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import todoReducer from "./todosSlice";
 import { loadTodosStateFromLocalStorage } from "./configureStore";
+import { saveItemsToLocalStorage } from "../repositories/localStorageRepository";
 import {
   TODOS_LOCAL_STORAGE_NAME,
   TODO_FILTER_ALL_BUTTON_NAME,
@@ -36,10 +37,9 @@ describe("configureStore", () => {
         filterValue: TODO_FILTER_ALL_BUTTON_NAME,
       },
     };
-    localStorage.setItem(
-      TODOS_LOCAL_STORAGE_NAME,
-      JSON.stringify(storedState.todos.todos)
-    );
+
+    saveItemsToLocalStorage(storedState.todos.todos, TODOS_LOCAL_STORAGE_NAME);
+
     const store = configureStore({
       reducer: {
         todos: todoReducer,
@@ -49,7 +49,6 @@ describe("configureStore", () => {
 
     // Assert
     expect(store.getState().todos).toEqual(storedState.todos);
-
     localStorage.removeItem(TODOS_LOCAL_STORAGE_NAME);
   });
 });
