@@ -3,6 +3,11 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import TodoList from "./TodoList";
+import {
+  TODO_LIST_EMPTY_LIST_MESSAGE,
+  TODO_ITEM_DELETE_BUTTON_NAME,
+  TODO_FILTER_ALL_BUTTON_NAME,
+} from "../../../constants";
 
 const mockStore = configureStore([]);
 
@@ -24,13 +29,13 @@ describe("TodoList component", () => {
             isCompleted: true,
           },
         ],
-        filter: "all",
+        filter: TODO_FILTER_ALL_BUTTON_NAME,
       },
     });
   });
 
   it("should render a list of todo items", () => {
-    // Arrange 
+    // Arrange
     render(
       <Provider store={store}>
         <TodoList />
@@ -47,7 +52,7 @@ describe("TodoList component", () => {
     store = mockStore({
       todos: {
         todos: [],
-        filter: "all",
+        filter: TODO_FILTER_ALL_BUTTON_NAME,
       },
     });
 
@@ -58,9 +63,7 @@ describe("TodoList component", () => {
     );
 
     // Assert
-    const message = screen.getByText(
-      "All todos completed! Add a todo and it will be displayed here."
-    );
+    const message = screen.getByText(TODO_LIST_EMPTY_LIST_MESSAGE);
     expect(message).toBeInTheDocument();
   });
 
@@ -74,7 +77,7 @@ describe("TodoList component", () => {
 
     // Act
     const deleteButton = screen.getAllByRole("button", {
-      name: "X",
+      name: TODO_ITEM_DELETE_BUTTON_NAME,
     });
     deleteButton[0].click();
 

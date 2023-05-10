@@ -1,5 +1,11 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import TodoFooter from "./TodoFooter";
+import {
+  TODO_FOOTER_ALL_DONE_TEXT,
+  TODO_FOOTER_NUMBER_TODO_LEFT_TEXT,
+  TODO_FOOTER_CLEAR_COMPLETED_BUTTON_NAME,
+  TODO_FILTER_ALL_BUTTON_NAME
+} from "../../../constants";
 
 describe("TodoFooter component", () => {
   const props = {
@@ -13,7 +19,7 @@ describe("TodoFooter component", () => {
     render(<TodoFooter {...props} />);
 
     // Assert
-    const spanElement = screen.getByText(`${props.countTodos} todo left`);
+    const spanElement = screen.getByText(`${props.countTodos} ${TODO_FOOTER_NUMBER_TODO_LEFT_TEXT}`);
     expect(spanElement).toBeInTheDocument();
   });
 
@@ -22,7 +28,7 @@ describe("TodoFooter component", () => {
     render(<TodoFooter {...props} countTodos={0} />);
 
     // Assert
-    const spanElement = screen.getByText("All done!");
+    const spanElement = screen.getByText(TODO_FOOTER_ALL_DONE_TEXT);
     expect(spanElement).toBeInTheDocument();
   });
 
@@ -33,9 +39,9 @@ describe("TodoFooter component", () => {
     // Act
     fireEvent.click(
       screen.getByRole("button", {
-        name: "All",
+        name: TODO_FILTER_ALL_BUTTON_NAME,
       }),
-      { target: { value: "All" } }
+      { target: { value: TODO_FILTER_ALL_BUTTON_NAME } }
     );
 
     // Assert
@@ -47,7 +53,7 @@ describe("TodoFooter component", () => {
     render(<TodoFooter {...props} />);
 
     // Act
-    const clearCompletedButton = screen.getByText("Clear completed");
+    const clearCompletedButton = screen.getByText(TODO_FOOTER_CLEAR_COMPLETED_BUTTON_NAME);
     fireEvent.click(clearCompletedButton);
 
     // Assert

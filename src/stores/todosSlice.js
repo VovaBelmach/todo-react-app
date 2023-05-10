@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
 import { saveItemsToLocalStorage } from "../repositories/localStorageRepository";
-import { TODOS_LOCAL_STORAGE_NAME } from "./constants";
+import { TODOS_LOCAL_STORAGE_NAME } from "../constants";
 
 const initialState = {
   todos: [],

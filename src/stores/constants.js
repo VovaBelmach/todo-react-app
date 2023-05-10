@@ -1,1 +1,0 @@
-export const TODOS_LOCAL_STORAGE_NAME = "todos";

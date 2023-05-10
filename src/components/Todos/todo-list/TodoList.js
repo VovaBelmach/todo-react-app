@@ -10,6 +10,7 @@ import TodoItem from "../todo-item/TodoItem";
 import TodoFooter from "../todo-footer/TodoFooter";
 import Card from "../../UI/Card/Card";
 import styles from "./TodoList.module.css";
+import { TODO_LIST_EMPTY_LIST_MESSAGE } from "../../../constants";
 
 const TodoList = () => {
   const filteredTodos = useSelector(filteredTodosSelector);
@@ -61,7 +62,7 @@ const TodoList = () => {
   return (
     <Card className={styles["todo-list"]}>
       {filteredTodos.length === 0 && (
-        <p>All todos completed! Add a todo and it will be displayed here.</p>
+        <p>{TODO_LIST_EMPTY_LIST_MESSAGE}</p>
       )}
       {filteredTodos.length > 0 && (
         <ul>

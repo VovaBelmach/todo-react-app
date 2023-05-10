@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import todoReducer from "./todosSlice";
 import { getItemsFromLocalStorage } from "../repositories/localStorageRepository";
-import { TODOS_LOCAL_STORAGE_NAME } from "./constants";
+import { TODOS_LOCAL_STORAGE_NAME } from "../constants";
 
-const loadStateFromLocalStorage = () => {
+const loadTodosStateFromLocalStorage = () => {
   const storedTodos = getItemsFromLocalStorage(TODOS_LOCAL_STORAGE_NAME);
   if (storedTodos) {
     return {
@@ -16,7 +16,7 @@ const loadStateFromLocalStorage = () => {
   return undefined;
 };
 
-const persistedState = loadStateFromLocalStorage();
+const persistedState = loadTodosStateFromLocalStorage();
 
 export default configureStore({
   reducer: {

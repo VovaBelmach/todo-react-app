@@ -3,6 +3,10 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
 import store from "../../../stores/configureStore";
 import TodoInput from "./TodoInput";
+import {
+  TODO_INPUT_EMPTY_ERROR_MESSAGE,
+  TODO_INPUT_PLACEHOLDER_TEXT,
+} from "../../../constants";
 
 describe("TodoInput component", () => {
   it("should render the TodoInput component", () => {
@@ -14,7 +18,9 @@ describe("TodoInput component", () => {
     );
 
     // Assert
-    const inputElement = screen.getByPlaceholderText("What should be done?");
+    const inputElement = screen.getByPlaceholderText(
+      TODO_INPUT_PLACEHOLDER_TEXT
+    );
     expect(inputElement).toBeInTheDocument();
   });
 
@@ -31,9 +37,7 @@ describe("TodoInput component", () => {
     fireEvent.submit(formElement);
 
     // Assert
-    const errorMessage = screen.getByText(
-      "Oops! You cannot create an empty todo. Please provide 'What should be done?' in the section above."
-    );
+    const errorMessage = screen.getByText(TODO_INPUT_EMPTY_ERROR_MESSAGE);
     expect(errorMessage).toBeInTheDocument();
   });
 
@@ -46,7 +50,9 @@ describe("TodoInput component", () => {
     );
 
     // Act
-    const inputElement = screen.getByPlaceholderText("What should be done?");
+    const inputElement = screen.getByPlaceholderText(
+      TODO_INPUT_PLACEHOLDER_TEXT
+    );
     const formElement = screen.getByRole("form");
     const enteredTodo = "Test todo";
     fireEvent.change(inputElement, { target: { value: enteredTodo } });

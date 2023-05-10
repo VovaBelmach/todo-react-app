@@ -4,6 +4,7 @@ import { deleteTodo, completeTodo } from "../../../stores/todosSlice";
 import Checkbox from "../../UI/Checkbox/Checkbox";
 import Button from "../../UI/Button/Button";
 import styles from "./TodoItem.module.css";
+import { TODO_ITEM_DELETE_BUTTON_NAME } from "../../../constants";
 
 const TodoItem = (props) => {
   const [isCompleted, setCompletition] = useState(props.isCompleted);
@@ -20,7 +21,6 @@ const TodoItem = (props) => {
   };
 
   const onCompleteHandler = (event) => {
-    console.log('onCompleteHandler');
     event.stopPropagation();
     dispatch(
       completeTodo({
@@ -50,7 +50,7 @@ const TodoItem = (props) => {
       />
       <label htmlFor={props.id}>{props.description}</label>
       <Button className={styles["delete-btn"]} onClick={onDeleteHandler}>
-        X
+        {TODO_ITEM_DELETE_BUTTON_NAME}
       </Button>
     </li>
   );

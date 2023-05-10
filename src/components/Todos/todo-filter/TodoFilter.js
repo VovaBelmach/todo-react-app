@@ -1,5 +1,10 @@
 import Button from "../../UI/Button/Button";
 import styles from "./TodoFilter.module.css";
+import {
+  TODO_FILTER_ALL_BUTTON_NAME,
+  TODO_FILTER_ACTIVE_BUTTON_NAME,
+  TODO_FILTER_COMPLITED_BUTTON_NAME,
+} from "../../../constants";
 
 const TodoFilter = (props) => {
   const onClickHandler = (event) => {
@@ -8,29 +13,26 @@ const TodoFilter = (props) => {
 
   return (
     <>
-      <ul className={styles['todo-filter']}>
+      <ul className={styles["todo-filter"]}>
         <li>
-          <Button
-            onClick={onClickHandler}
-            value="All"
-          >
-            All
+          <Button onClick={onClickHandler} value={TODO_FILTER_ALL_BUTTON_NAME}>
+            {TODO_FILTER_ALL_BUTTON_NAME}
           </Button>
         </li>
         <li>
           <Button
             onClick={onClickHandler}
-            value="Active"
+            value={TODO_FILTER_ACTIVE_BUTTON_NAME}
           >
-            Active
+            {TODO_FILTER_ACTIVE_BUTTON_NAME}
           </Button>
         </li>
         <li>
           <Button
             onClick={onClickHandler}
-            value="Completed"
+            value={TODO_FILTER_COMPLITED_BUTTON_NAME}
           >
-            Completed
+            {TODO_FILTER_COMPLITED_BUTTON_NAME}
           </Button>
         </li>
       </ul>
