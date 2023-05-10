@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
+import { saveItemsToLocalStorage } from "../repositories/localStorageRepository";
+import { TODOS_LOCAL_STORAGE_NAME } from "./constants";
 
 const initialState = {
   todos: [],
@@ -17,12 +19,12 @@ export const todosSlice = createSlice({
         isCompleted: false,
       };
       state.todos.push(newTodo);
-      saveTodosToLocalStorage(state.todos);
+      saveItemsToLocalStorage(state.todos, TODOS_LOCAL_STORAGE_NAME);
     },
     deleteTodo: (state, action) => {
       const { id } = action.payload;
       state.todos = state.todos.filter((todo) => todo.id !== id);
-      saveTodosToLocalStorage(state.todos);
+      saveItemsToLocalStorage(state.todos, TODOS_LOCAL_STORAGE_NAME);
     },
     completeTodo: (state, action) => {
       const index = state.todos.findIndex(
@@ -30,7 +32,7 @@ export const todosSlice = createSlice({
       );
       if (index !== -1) {
         state.todos[index].isCompleted = !state.todos[index].isCompleted;
-        saveTodosToLocalStorage(state.todos);
+        saveItemsToLocalStorage(state.todos, TODOS_LOCAL_STORAGE_NAME);
       }
     },
     setFilter: (state, action) => {
@@ -43,7 +45,7 @@ export const todosSlice = createSlice({
       newTodos.splice(draggedIndex, 1);
       newTodos.splice(droppedIndex, 0, draggedTodo);
       state.todos = newTodos;
-      saveTodosToLocalStorage(state.todos);
+      saveItemsToLocalStorage(state.todos, TODOS_LOCAL_STORAGE_NAME);
     },
   },
 });
@@ -63,8 +65,4 @@ export const filteredTodosSelector = (state) => {
     default:
       return todos;
   }
-};
-
-const saveTodosToLocalStorage = (todos) => {
-  localStorage.setItem("todos", JSON.stringify(todos));
 };

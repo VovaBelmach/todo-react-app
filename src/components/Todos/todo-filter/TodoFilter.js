@@ -8,7 +8,7 @@ const TodoFilter = (props) => {
 
   return (
     <>
-      <ul className={`${styles["todo-filter"]}`}>
+      <ul className={styles['todo-filter']}>
         <li>
           <Button
             onClick={onClickHandler}

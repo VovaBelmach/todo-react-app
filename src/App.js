@@ -5,7 +5,7 @@ import styles from "./App.module.css";
 function App() {
   return (
     <>
-      <div className={`${styles["app-header"]}`} />
+      <div className={styles['app-header']} />
       <div className={styles.app}>
         <main className={`${styles["app-content"]}`}>
           <header>

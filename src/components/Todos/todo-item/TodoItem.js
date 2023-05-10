@@ -45,7 +45,7 @@ const TodoItem = (props) => {
         isDisabled={false}
       />
       <label>{props.description}</label>
-      <Button onClick={onDeleteHandler} className={`${styles["delete-btn"]}`}>
+      <Button onClick={onDeleteHandler} className={styles['delete-btn']}>
         X
       </Button>
     </li>
