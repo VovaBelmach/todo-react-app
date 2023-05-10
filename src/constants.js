@@ -20,3 +20,7 @@ export const TODO_ITEM_DELETE_BUTTON_NAME = "X";
 
 // TodoList component
 export const TODO_LIST_EMPTY_LIST_MESSAGE = "All todos completed! Add a todo and it will be displayed here.";
+
+// App component
+export const HEADER_TEXT = "TODO";
+export const FOOTER_TEXT = "Drag and drop to reorder list.";
