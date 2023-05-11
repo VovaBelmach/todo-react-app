@@ -43,6 +43,7 @@ const TodoInput = () => {
         <Checkbox isDisabled={true} />
         <input
           type="text"
+          name="todo-input"
           placeholder={TODO_INPUT_PLACEHOLDER_TEXT}
           ref={todoInputRef}
           onChange={onChangeHandler}

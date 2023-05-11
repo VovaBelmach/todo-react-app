@@ -7,6 +7,7 @@ exports[`TodoList component should render correctly when there are filtered todo
   >
     <ul>
       <li
+        class="incomplete"
         draggable="true"
         role="todo-item"
         style="opacity: 1;"
@@ -30,6 +31,7 @@ exports[`TodoList component should render correctly when there are filtered todo
         </button>
       </li>
       <li
+        class="complete"
         draggable="true"
         role="todo-item"
         style="opacity: 1;"
@@ -94,6 +96,7 @@ exports[`TodoList component should render correctly when there are filtered todo
       <button
         class="button todo-clear-completed"
         type="button"
+        value="Clear completed"
       >
         Clear completed
       </button>
@@ -150,6 +153,7 @@ exports[`TodoList component should render correctly when there are no filtered t
       <button
         class="button todo-clear-completed"
         type="button"
+        value="Clear completed"
       >
         Clear completed
       </button>

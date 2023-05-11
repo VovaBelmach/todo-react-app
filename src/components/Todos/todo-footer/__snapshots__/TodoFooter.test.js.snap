@@ -41,6 +41,7 @@ exports[`TodoFooter component should match snapshot with no todos 1`] = `
   <button
     class="button todo-clear-completed"
     type="button"
+    value="Clear completed"
   >
     Clear completed
   </button>
@@ -88,6 +89,7 @@ exports[`TodoFooter component should match snapshot with todo count 1`] = `
   <button
     class="button todo-clear-completed"
     type="button"
+    value="Clear completed"
   >
     Clear completed
   </button>

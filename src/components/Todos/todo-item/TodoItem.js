@@ -34,6 +34,7 @@ const TodoItem = (props) => {
 
   return (
     <li
+      className={isCompleted ? "complete" : "incomplete"}
       role={role}
       key={props.id}
       draggable
@@ -67,7 +68,7 @@ TodoItem.propTypes = {
   onDragStartHandle: PropTypes.func.isRequired,
   onDragOverHandle: PropTypes.func.isRequired,
   onDropHandle: PropTypes.func.isRequired,
-  onDragEndHandle: PropTypes.func.isRequired
-}
+  onDragEndHandle: PropTypes.func.isRequired,
+};
 
 export default TodoItem;

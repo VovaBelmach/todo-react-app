@@ -15,6 +15,7 @@ exports[`TodoInput component should render correctly 1`] = `
       type="checkbox"
     />
     <input
+      name="todo-input"
       onChange={[Function]}
       placeholder="What should be done?"
       type="text"

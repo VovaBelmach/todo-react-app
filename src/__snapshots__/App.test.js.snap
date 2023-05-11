@@ -36,6 +36,7 @@ Array [
             type="checkbox"
           />
           <input
+            name="todo-input"
             onChange={[Function]}
             placeholder="What should be done?"
             type="text"
@@ -95,6 +96,7 @@ Array [
             className="button todo-clear-completed"
             onClick={[Function]}
             type="button"
+            value="Clear completed"
           >
             Clear completed
           </button>

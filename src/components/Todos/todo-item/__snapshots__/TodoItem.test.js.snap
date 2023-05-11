@@ -3,6 +3,7 @@
 exports[`TodoItem component should match snapshot 1`] = `
 <div>
   <li
+    class="incomplete"
     draggable="true"
     role="todo-item"
     style="opacity: 1;"

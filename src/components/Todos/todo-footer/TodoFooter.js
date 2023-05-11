@@ -24,6 +24,7 @@ const TodoFooter = (props) => {
         <Button
           onClick={props.onDeleteCompletedHandler}
           className={styles["todo-clear-completed"]}
+          value={TODO_FOOTER_CLEAR_COMPLETED_BUTTON_NAME}
         >
           {TODO_FOOTER_CLEAR_COMPLETED_BUTTON_NAME}
         </Button>
