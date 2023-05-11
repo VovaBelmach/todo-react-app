@@ -43,7 +43,7 @@ const TodoFilter = (props) => {
 };
 
 TodoFilter.propTypes = {
-  onFilterHandler: PropTypes.func.isRequired,
+  onFilterHandler: PropTypes.func,
 };
 
 export default TodoFilter;

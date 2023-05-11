@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todos should renders correctly 1`] = `
+<div>
+  <div
+    class="card todo-input"
+  >
+    <form
+      aria-label="form"
+    >
+      <input
+        class="checkbox"
+        disabled=""
+        type="checkbox"
+      />
+      <input
+        placeholder="What should be done?"
+        type="text"
+      />
+    </form>
+    <span
+      class="error-message"
+    />
+  </div>
+  <div
+    class="card todo-list"
+  >
+    <p>
+      All todos completed! Add a todo and it will be displayed here.
+    </p>
+    <footer
+      class="todo-footer"
+    >
+      <span>
+        All done!
+      </span>
+      <ul
+        class="todo-filter"
+      >
+        <li>
+          <button
+            class="button "
+            type="button"
+            value="All"
+          >
+            All
+          </button>
+        </li>
+        <li>
+          <button
+            class="button "
+            type="button"
+            value="Active"
+          >
+            Active
+          </button>
+        </li>
+        <li>
+          <button
+            class="button "
+            type="button"
+            value="Completed"
+          >
+            Completed
+          </button>
+        </li>
+      </ul>
+      <button
+        class="button todo-clear-completed"
+        type="button"
+      >
+        Clear completed
+      </button>
+    </footer>
+  </div>
+</div>
+`;

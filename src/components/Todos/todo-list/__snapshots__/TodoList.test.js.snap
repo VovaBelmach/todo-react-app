@@ -13,12 +13,12 @@ exports[`TodoList component should render correctly when there are filtered todo
       >
         <input
           class="checkbox"
-          id="1"
-          name="1"
+          id="a74ba32f-3868-48f9-bb1a-2f8267844fc1"
+          name="a74ba32f-3868-48f9-bb1a-2f8267844fc1"
           type="checkbox"
         />
         <label
-          for="1"
+          for="a74ba32f-3868-48f9-bb1a-2f8267844fc1"
         >
           Learn React
         </label>
@@ -37,12 +37,12 @@ exports[`TodoList component should render correctly when there are filtered todo
         <input
           checked=""
           class="checkbox"
-          id="2"
-          name="2"
+          id="c4eb6856-96af-41ef-b497-7424120cbbc4"
+          name="c4eb6856-96af-41ef-b497-7424120cbbc4"
           type="checkbox"
         />
         <label
-          for="2"
+          for="c4eb6856-96af-41ef-b497-7424120cbbc4"
         >
           Write unit tests
         </label>

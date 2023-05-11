@@ -34,8 +34,8 @@ const TodoFooter = (props) => {
 
 TodoFooter.propTypes = {
   countTodos: PropTypes.number.isRequired,
-  onFilterHandler: PropTypes.func.isRequired,
-  onDeleteCompletedHandler: PropTypes.func.isRequired,
+  onFilterHandler: PropTypes.func,
+  onDeleteCompletedHandler: PropTypes.func,
 };
 
 export default TodoFooter;

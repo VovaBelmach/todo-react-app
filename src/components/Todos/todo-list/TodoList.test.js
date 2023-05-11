@@ -19,12 +19,12 @@ describe("TodoList component", () => {
       todos: {
         todos: [
           {
-            id: 1,
+            id: 'a74ba32f-3868-48f9-bb1a-2f8267844fc1',
             description: "Learn React",
             isCompleted: false,
           },
           {
-            id: 2,
+            id: 'c4eb6856-96af-41ef-b497-7424120cbbc4',
             description: "Write unit tests",
             isCompleted: true,
           },
@@ -117,7 +117,7 @@ describe("TodoList component", () => {
       {
         type: "todos/deleteTodo",
         payload: {
-          id: 1,
+          id: 'a74ba32f-3868-48f9-bb1a-2f8267844fc1',
         },
       },
     ]);
