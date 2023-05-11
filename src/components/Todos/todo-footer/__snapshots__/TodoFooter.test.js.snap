@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoFooter component should match snapshot with no todos 1`] = `
+<footer
+  class="todo-footer"
+>
+  <span>
+    All done!
+  </span>
+  <ul
+    class="todo-filter"
+  >
+    <li>
+      <button
+        class="button "
+        type="button"
+        value="All"
+      >
+        All
+      </button>
+    </li>
+    <li>
+      <button
+        class="button "
+        type="button"
+        value="Active"
+      >
+        Active
+      </button>
+    </li>
+    <li>
+      <button
+        class="button "
+        type="button"
+        value="Completed"
+      >
+        Completed
+      </button>
+    </li>
+  </ul>
+  <button
+    class="button todo-clear-completed"
+    type="button"
+  >
+    Clear completed
+  </button>
+</footer>
+`;
+
+exports[`TodoFooter component should match snapshot with todo count 1`] = `
+<footer
+  class="todo-footer"
+>
+  <span>
+    3 todo left
+  </span>
+  <ul
+    class="todo-filter"
+  >
+    <li>
+      <button
+        class="button "
+        type="button"
+        value="All"
+      >
+        All
+      </button>
+    </li>
+    <li>
+      <button
+        class="button "
+        type="button"
+        value="Active"
+      >
+        Active
+      </button>
+    </li>
+    <li>
+      <button
+        class="button "
+        type="button"
+        value="Completed"
+      >
+        Completed
+      </button>
+    </li>
+  </ul>
+  <button
+    class="button todo-clear-completed"
+    type="button"
+  >
+    Clear completed
+  </button>
+</footer>
+`;

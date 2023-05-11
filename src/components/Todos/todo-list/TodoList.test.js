@@ -34,6 +34,37 @@ describe("TodoList component", () => {
     });
   });
 
+  it("should render correctly when there are no filtered todos", () => {
+    // Arrange
+    store = mockStore({
+      todos: {
+        todos: [],
+        filter: TODO_FILTER_ALL_BUTTON_NAME,
+      },
+    });
+    
+    const { container } = render(
+      <Provider store={store}>
+        <TodoList />
+      </Provider>
+    );
+
+    // Act
+    expect(container).toMatchSnapshot();
+  });
+
+  it("should render correctly when there are filtered todos", () => {
+    // Arrange
+    const { container } = render(
+      <Provider store={store}>
+        <TodoList />
+      </Provider>
+    );
+
+    // Act
+    expect(container).toMatchSnapshot();
+  });
+
   it("should render a list of todo items", () => {
     // Arrange
     render(

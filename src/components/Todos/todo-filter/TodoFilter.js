@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 import Button from "../../UI/Button/Button";
 import styles from "./TodoFilter.module.css";
 import {
@@ -38,6 +40,10 @@ const TodoFilter = (props) => {
       </ul>
     </>
   );
+};
+
+TodoFilter.propTypes = {
+  onFilterHandler: PropTypes.func.isRequired,
 };
 
 export default TodoFilter;

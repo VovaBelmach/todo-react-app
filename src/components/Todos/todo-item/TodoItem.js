@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTodo, completeTodo } from "../../../stores/todosSlice";
@@ -55,5 +57,17 @@ const TodoItem = (props) => {
     </li>
   );
 };
+
+TodoItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  isCompleted: PropTypes.bool.isRequired,
+  index: PropTypes.number.isRequired,
+  draggedIndex: PropTypes.number,
+  onDragStartHandle: PropTypes.func.isRequired,
+  onDragOverHandle: PropTypes.func.isRequired,
+  onDropHandle: PropTypes.func.isRequired,
+  onDragEndHandle: PropTypes.func.isRequired
+}
 
 export default TodoItem;

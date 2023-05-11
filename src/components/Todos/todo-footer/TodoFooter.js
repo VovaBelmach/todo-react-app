@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 import Button from "../../UI/Button/Button";
 import TodoFilter from "../todo-filter/TodoFilter";
 import styles from "./TodoFooter.module.css";
@@ -28,6 +30,12 @@ const TodoFooter = (props) => {
       </footer>
     </>
   );
+};
+
+TodoFooter.propTypes = {
+  countTodos: PropTypes.number.isRequired,
+  onFilterHandler: PropTypes.func.isRequired,
+  onDeleteCompletedHandler: PropTypes.func.isRequired,
 };
 
 export default TodoFooter;

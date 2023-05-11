@@ -1,10 +1,11 @@
+import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import TodoFooter from "./TodoFooter";
 import {
   TODO_FOOTER_ALL_DONE_TEXT,
   TODO_FOOTER_NUMBER_TODO_LEFT_TEXT,
   TODO_FOOTER_CLEAR_COMPLETED_BUTTON_NAME,
-  TODO_FILTER_ALL_BUTTON_NAME
+  TODO_FILTER_ALL_BUTTON_NAME,
 } from "../../../constants";
 
 describe("TodoFooter component", () => {
@@ -14,12 +15,30 @@ describe("TodoFooter component", () => {
     onDeleteCompletedHandler: jest.fn(),
   };
 
+  it("should match snapshot with todo count", () => {
+    // Arrange
+    const { container } = render(<TodoFooter countTodos={props.countTodos} />);
+    
+    // Assert
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should match snapshot with no todos', () => {
+    //Arrange
+    const { container } = render(<TodoFooter countTodos={0} />);
+    
+    // Assert
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   it("should render with countTodos prop", () => {
     // Arrange
     render(<TodoFooter {...props} />);
 
     // Assert
-    const spanElement = screen.getByText(`${props.countTodos} ${TODO_FOOTER_NUMBER_TODO_LEFT_TEXT}`);
+    const spanElement = screen.getByText(
+      `${props.countTodos} ${TODO_FOOTER_NUMBER_TODO_LEFT_TEXT}`
+    );
     expect(spanElement).toBeInTheDocument();
   });
 
@@ -53,7 +72,9 @@ describe("TodoFooter component", () => {
     render(<TodoFooter {...props} />);
 
     // Act
-    const clearCompletedButton = screen.getByText(TODO_FOOTER_CLEAR_COMPLETED_BUTTON_NAME);
+    const clearCompletedButton = screen.getByText(
+      TODO_FOOTER_CLEAR_COMPLETED_BUTTON_NAME
+    );
     fireEvent.click(clearCompletedButton);
 
     // Assert

@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 import styles from "./Checkbox.module.css";
 
 const Checkbox = (props) => {
@@ -15,6 +17,13 @@ const Checkbox = (props) => {
       />
     </>
   );
+};
+
+Checkbox.propTypes = {
+  id: PropTypes.any,
+  isCompleted: PropTypes.bool,
+  isDisabled: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 export default Checkbox;

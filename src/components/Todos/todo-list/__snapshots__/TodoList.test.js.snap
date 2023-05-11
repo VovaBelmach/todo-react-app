@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList component should render correctly when there are filtered todos 1`] = `
+<div>
+  <div
+    class="card todo-list"
+  >
+    <ul>
+      <li
+        draggable="true"
+        role="todo-item"
+        style="opacity: 1;"
+      >
+        <input
+          class="checkbox"
+          id="1"
+          name="1"
+          type="checkbox"
+        />
+        <label
+          for="1"
+        >
+          Learn React
+        </label>
+        <button
+          class="button delete-btn"
+          type="button"
+        >
+          X
+        </button>
+      </li>
+      <li
+        draggable="true"
+        role="todo-item"
+        style="opacity: 1;"
+      >
+        <input
+          checked=""
+          class="checkbox"
+          id="2"
+          name="2"
+          type="checkbox"
+        />
+        <label
+          for="2"
+        >
+          Write unit tests
+        </label>
+        <button
+          class="button delete-btn"
+          type="button"
+        >
+          X
+        </button>
+      </li>
+    </ul>
+    <footer
+      class="todo-footer"
+    >
+      <span>
+        1 todo left
+      </span>
+      <ul
+        class="todo-filter"
+      >
+        <li>
+          <button
+            class="button "
+            type="button"
+            value="All"
+          >
+            All
+          </button>
+        </li>
+        <li>
+          <button
+            class="button "
+            type="button"
+            value="Active"
+          >
+            Active
+          </button>
+        </li>
+        <li>
+          <button
+            class="button "
+            type="button"
+            value="Completed"
+          >
+            Completed
+          </button>
+        </li>
+      </ul>
+      <button
+        class="button todo-clear-completed"
+        type="button"
+      >
+        Clear completed
+      </button>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`TodoList component should render correctly when there are no filtered todos 1`] = `
+<div>
+  <div
+    class="card todo-list"
+  >
+    <p>
+      All todos completed! Add a todo and it will be displayed here.
+    </p>
+    <footer
+      class="todo-footer"
+    >
+      <span>
+        All done!
+      </span>
+      <ul
+        class="todo-filter"
+      >
+        <li>
+          <button
+            class="button "
+            type="button"
+            value="All"
+          >
+            All
+          </button>
+        </li>
+        <li>
+          <button
+            class="button "
+            type="button"
+            value="Active"
+          >
+            Active
+          </button>
+        </li>
+        <li>
+          <button
+            class="button "
+            type="button"
+            value="Completed"
+          >
+            Completed
+          </button>
+        </li>
+      </ul>
+      <button
+        class="button todo-clear-completed"
+        type="button"
+      >
+        Clear completed
+      </button>
+    </footer>
+  </div>
+</div>
+`;

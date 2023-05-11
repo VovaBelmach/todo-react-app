@@ -1,10 +1,23 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import { Provider } from "react-redux";
 import App from "./App";
 import store from "./stores/configureStore";
 import { HEADER_TEXT, FOOTER_TEXT } from "./constants";
 
 describe("App", () => {
+  it("should renders correctly", () => {
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <App />
+        </Provider>
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it("should render the header and footer text", () => {
     render(
       <Provider store={store}>

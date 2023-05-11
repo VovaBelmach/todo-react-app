@@ -1,4 +1,5 @@
 import React from "react";
+import renderer from "react-test-renderer";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
 import store from "../../../stores/configureStore";
@@ -9,6 +10,20 @@ import {
 } from "../../../constants";
 
 describe("TodoInput component", () => {
+  it("should render correctly", () => {
+    // Arrange
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <TodoInput />
+        </Provider>
+      )
+      .toJSON();
+
+    // Assert
+    expect(tree).toMatchSnapshot();
+  });
+
   it("should render the TodoInput component", () => {
     // Arrange
     render(

@@ -1,3 +1,4 @@
+import React from "react";
 import Todos from "./components/Todos/Todos";
 import styles from "./App.module.css";
 import { HEADER_TEXT, FOOTER_TEXT } from "./constants";

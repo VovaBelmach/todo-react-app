@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 import styles from "./Buttor.module.css";
 
 const Button = (props) => {
@@ -11,6 +13,14 @@ const Button = (props) => {
       {props.children}
     </button>
   );
+};
+
+Button.propTypes = {
+  className: PropTypes.any,
+  type: PropTypes.any,
+  value: PropTypes.any,
+  children: PropTypes.any,
+  onClick: PropTypes.func,
 };
 
 export default Button;

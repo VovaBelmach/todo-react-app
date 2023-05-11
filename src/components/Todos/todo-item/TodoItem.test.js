@@ -1,3 +1,4 @@
+import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
@@ -19,6 +20,18 @@ const props = {
 };
 
 describe("TodoItem component", () => {
+  it("should match snapshot", () => {
+    // Arrange
+    const { container } = render(
+      <Provider store={store}>
+        <TodoItem {...props} />
+      </Provider>
+    );
+
+    // Act
+    expect(container).toMatchSnapshot();
+  });
+
   it("should render the description and a checkbox", () => {
     // Arrange
     render(

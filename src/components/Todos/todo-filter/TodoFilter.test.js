@@ -1,13 +1,23 @@
+import React from 'react';
 import { render, screen, fireEvent } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import TodoFilter from "./TodoFilter";
 import {
-    TODO_FILTER_ALL_BUTTON_NAME,
-    TODO_FILTER_ACTIVE_BUTTON_NAME,
-    TODO_FILTER_COMPLITED_BUTTON_NAME,
-  } from "../../../constants";
+  TODO_FILTER_ALL_BUTTON_NAME,
+  TODO_FILTER_ACTIVE_BUTTON_NAME,
+  TODO_FILTER_COMPLITED_BUTTON_NAME,
+} from "../../../constants";
 
 describe("TodoFilter", () => {
-  test("renders all filter button", () => {
+  it("should renders correctly", () => {
+    // Arrange
+    const tree = renderer.create(<TodoFilter />).toJSON();
+
+    //Assert
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders all filter button", () => {
     // Arrange
     render(<TodoFilter />);
 
@@ -16,7 +26,7 @@ describe("TodoFilter", () => {
     expect(allButton).toBeInTheDocument();
   });
 
-  test("renders active filter button", () => {
+  it("renders active filter button", () => {
     // Arrange
     render(<TodoFilter />);
 
@@ -25,7 +35,7 @@ describe("TodoFilter", () => {
     expect(activeButton).toBeInTheDocument();
   });
 
-  test("renders completed filter button", () => {
+  it("renders completed filter button", () => {
     // Arrange
     render(<TodoFilter />);
 
@@ -34,11 +44,11 @@ describe("TodoFilter", () => {
     expect(completedButton).toBeInTheDocument();
   });
 
-  test("calls onFilterHandler with correct value when All button is clicked", () => {
+  it("calls onFilterHandler with correct value when All button is clicked", () => {
     // Arrange
     const onFilterHandler = jest.fn();
     render(<TodoFilter onFilterHandler={onFilterHandler} />);
-    
+
     // Act
     const allButton = screen.getByText(TODO_FILTER_ALL_BUTTON_NAME);
     fireEvent.click(allButton);
@@ -47,20 +57,22 @@ describe("TodoFilter", () => {
     expect(onFilterHandler).toHaveBeenCalledWith(TODO_FILTER_ALL_BUTTON_NAME);
   });
 
-  test("calls onFilterHandler with correct value when Active button is clicked", () => {
+  it("calls onFilterHandler with correct value when Active button is clicked", () => {
     // Arrange
     const onFilterHandler = jest.fn();
     render(<TodoFilter onFilterHandler={onFilterHandler} />);
-    
+
     // Act
     const activeButton = screen.getByText(TODO_FILTER_ACTIVE_BUTTON_NAME);
     fireEvent.click(activeButton);
 
     // Assert
-    expect(onFilterHandler).toHaveBeenCalledWith(TODO_FILTER_ACTIVE_BUTTON_NAME);
+    expect(onFilterHandler).toHaveBeenCalledWith(
+      TODO_FILTER_ACTIVE_BUTTON_NAME
+    );
   });
 
-  test("calls onFilterHandler with correct value when Completed button is clicked", () => {
+  it("calls onFilterHandler with correct value when Completed button is clicked", () => {
     // Arrange
     const onFilterHandler = jest.fn();
     render(<TodoFilter onFilterHandler={onFilterHandler} />);
@@ -69,6 +81,8 @@ describe("TodoFilter", () => {
     fireEvent.click(completedButton);
 
     // Assert
-    expect(onFilterHandler).toHaveBeenCalledWith(TODO_FILTER_COMPLITED_BUTTON_NAME);
+    expect(onFilterHandler).toHaveBeenCalledWith(
+      TODO_FILTER_COMPLITED_BUTTON_NAME
+    );
   });
 });
