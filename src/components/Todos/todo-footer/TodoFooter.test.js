@@ -18,15 +18,15 @@ describe("TodoFooter component", () => {
   it("should match snapshot with todo count", () => {
     // Arrange
     const { container } = render(<TodoFooter countTodos={props.countTodos} />);
-    
+
     // Assert
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('should match snapshot with no todos', () => {
+  it("should match snapshot with no todos", () => {
     //Arrange
     const { container } = render(<TodoFooter countTodos={0} />);
-    
+
     // Assert
     expect(container.firstChild).toMatchSnapshot();
   });

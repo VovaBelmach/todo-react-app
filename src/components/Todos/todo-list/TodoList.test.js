@@ -19,12 +19,12 @@ describe("TodoList component", () => {
       todos: {
         todos: [
           {
-            id: 'a74ba32f-3868-48f9-bb1a-2f8267844fc1',
+            id: "a74ba32f-3868-48f9-bb1a-2f8267844fc1",
             description: "Learn React",
             isCompleted: false,
           },
           {
-            id: 'c4eb6856-96af-41ef-b497-7424120cbbc4',
+            id: "c4eb6856-96af-41ef-b497-7424120cbbc4",
             description: "Write unit tests",
             isCompleted: true,
           },
@@ -42,7 +42,7 @@ describe("TodoList component", () => {
         filter: TODO_FILTER_ALL_BUTTON_NAME,
       },
     });
-    
+
     const { container } = render(
       <Provider store={store}>
         <TodoList />
@@ -117,7 +117,7 @@ describe("TodoList component", () => {
       {
         type: "todos/deleteTodo",
         payload: {
-          id: 'a74ba32f-3868-48f9-bb1a-2f8267844fc1',
+          id: "a74ba32f-3868-48f9-bb1a-2f8267844fc1",
         },
       },
     ]);

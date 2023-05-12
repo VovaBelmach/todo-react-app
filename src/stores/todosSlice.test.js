@@ -7,7 +7,10 @@ import todosReducer, {
   setFilter,
   filteredTodosSelector,
 } from "./todosSlice";
-import { TODO_FILTER_ALL_BUTTON_NAME, TODO_FILTER_ACTIVE_BUTTON_NAME } from "../constants";
+import {
+  TODO_FILTER_ALL_BUTTON_NAME,
+  TODO_FILTER_ACTIVE_BUTTON_NAME,
+} from "../constants";
 
 const mockTodo = {
   id: "123",
@@ -32,7 +35,7 @@ describe("todosSlice", () => {
   it("should add a new todo", () => {
     // Arrange
     const store = setup();
-    
+
     // Act
     store.dispatch(
       addTodo({
@@ -51,7 +54,7 @@ describe("todosSlice", () => {
     const store = setup({
       todos: [mockTodo],
     });
-    
+
     // Act
     store.dispatch(
       completeTodo({
@@ -104,7 +107,7 @@ describe("todosSlice", () => {
     const store = setup({
       todos: [mockTodo, mockTodo2],
     });
-    
+
     // Act
     store.dispatch(
       reorderTodos({
