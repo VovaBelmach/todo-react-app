@@ -13,8 +13,10 @@ describe("create todo spec", () => {
   it("shouldn't create a empty todo", () => {
     cy.get('input[name="todo-input"]').type("{enter}");
 
-    cy.contains("Oops! You cannot create an empty todo. Please provide 'What should be done?' in the section above.").should("exist");
-    cy.get('[role="todo-item"]').should("have.length", 0)
+    cy.contains(
+      "Oops! You cannot create an empty todo. Please provide 'What should be done?' in the section above."
+    ).should("exist");
+    cy.get('[role="todo-item"]').should("have.length", 0);
   });
 
   it("should mark todo", () => {
@@ -24,23 +26,23 @@ describe("create todo spec", () => {
   });
 
   it("should delete a todo", () => {
-    cy.get('input[name="todo-input"]')
-        .type("First Todo{enter}");
+    cy.get('input[name="todo-input"]').type("First Todo{enter}");
 
     cy.get("button").eq(0).click({ force: true });
 
-    cy.contains("All todos completed! Add a todo and it will be displayed here.").should("exist");
+    cy.contains(
+      "All todos completed! Add a todo and it will be displayed here."
+    ).should("exist");
     cy.contains("All done!").should("exist");
   });
 
   it("should filter between all, complete and incomplete todos", () => {
-    cy.get('input[name="todo-input"]')
-      .type("Sprint meeting{enter}")
-      .type("Code{enter}")
-      .type("Read{enter}")
-      .type("Eat{enter}")
-      .type("Exercising{enter}")
-      .type("Code{enter}");
+    cy.get('input[name="todo-input"]').type("Sprint meeting{enter}");
+    cy.get('input[name="todo-input"]').type("Code{enter}");
+    cy.get('input[name="todo-input"]').type("Read{enter}");
+    cy.get('input[name="todo-input"]').type("Eat{enter}");
+    cy.get('input[name="todo-input"]').type("Exercising{enter}");
+    cy.get('input[name="todo-input"]').type("Code{enter}");
 
     // mark some as complete
     cy.get('input[type="checkbox"]').eq(2).click();
@@ -69,13 +71,12 @@ describe("create todo spec", () => {
   });
 
   it("should delete all completed todos", () => {
-    cy.get('input[name="todo-input"]')
-      .type("Sprint meeting{enter}")
-      .type("Code{enter}")
-      .type("Read{enter}")
-      .type("Eat{enter}")
-      .type("Exercising{enter}")
-      .type("Code{enter}");
+    cy.get('input[name="todo-input"]').type("Sprint meeting{enter}");
+    cy.get('input[name="todo-input"]').type("Code{enter}");
+    cy.get('input[name="todo-input"]').type("Read{enter}");
+    cy.get('input[name="todo-input"]').type("Eat{enter}");
+    cy.get('input[name="todo-input"]').type("Exercising{enter}");
+    cy.get('input[name="todo-input"]').type("Code{enter}");
 
     // mark some as complete
     cy.get('input[type="checkbox"]').eq(2).click();
@@ -94,10 +95,9 @@ describe("create todo spec", () => {
   it("should reorder list todos", () => {
     const dataTransfer = new DataTransfer();
 
-    cy.get('input[name="todo-input"]')
-      .type("Item 1{enter}")
-      .type("Item 2{enter}")
-      .type("Item 3{enter}");
+    cy.get('input[name="todo-input"]').type("Item 1{enter}");
+    cy.get('input[name="todo-input"]').type("Item 2{enter}");
+    cy.get('input[name="todo-input"]').type("Item 3{enter}");
 
     cy.get("li[draggable=true]").first().trigger("dragstart", { dataTransfer });
 
