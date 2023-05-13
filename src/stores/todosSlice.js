@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
-import { saveItemsToLocalStorage } from "../repositories/localStorageRepository";
 import {
   TODOS_LOCAL_STORAGE_NAME,
   TODO_FILTER_ALL_BUTTON_NAME,
@@ -24,12 +23,10 @@ export const todosSlice = createSlice({
         isCompleted: false,
       };
       state.todos.push(newTodo);
-      saveItemsToLocalStorage(state.todos, TODOS_LOCAL_STORAGE_NAME);
     },
     deleteTodo: (state, action) => {
       const { id } = action.payload;
       state.todos = state.todos.filter((todo) => todo.id !== id);
-      saveItemsToLocalStorage(state.todos, TODOS_LOCAL_STORAGE_NAME);
     },
     completeTodo: (state, action) => {
       const index = state.todos.findIndex(
@@ -37,7 +34,6 @@ export const todosSlice = createSlice({
       );
       if (index !== -1) {
         state.todos[index].isCompleted = !state.todos[index].isCompleted;
-        saveItemsToLocalStorage(state.todos, TODOS_LOCAL_STORAGE_NAME);
       }
     },
     setFilter: (state, action) => {
@@ -50,7 +46,6 @@ export const todosSlice = createSlice({
       newTodos.splice(draggedIndex, 1);
       newTodos.splice(droppedIndex, 0, draggedTodo);
       state.todos = newTodos;
-      saveItemsToLocalStorage(state.todos, TODOS_LOCAL_STORAGE_NAME);
     },
   },
 });
