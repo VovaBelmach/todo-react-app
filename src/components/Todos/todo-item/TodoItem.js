@@ -35,14 +35,14 @@ const TodoItem = (props) => {
   return (
     <li
       className={isCompleted ? "complete" : "incomplete"}
+      style={{ opacity: props.draggedIndex === props.index ? 0.5 : 1 }}
       role={role}
       key={props.id}
-      draggable
       onDragStart={(event) => props.onDragStartHandle(event, props.index)}
       onDragOver={props.onDragOverHandle}
       onDrop={(event) => props.onDropHandle(event, props.index)}
       onDragEnd={props.onDragEndHandle}
-      style={{ opacity: props.draggedIndex === props.index ? 0.5 : 1 }}
+      draggable
     >
       <Checkbox
         id={props.id}

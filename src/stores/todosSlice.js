@@ -59,9 +59,9 @@ export const filteredTodosSelector = (state) => {
   const { todos, filterValue } = state.todos;
   switch (filterValue) {
     case TODO_FILTER_ACTIVE_BUTTON_NAME:
-      return todos.filter((todo) => todo.isCompleted !== true);
+      return todos.filter((todo) => !todo.isCompleted);
     case TODO_FILTER_COMPLITED_BUTTON_NAME:
-      return todos.filter((todo) => todo.isCompleted === true);
+      return todos.filter((todo) => todo.isCompleted);
     default:
       return todos;
   }

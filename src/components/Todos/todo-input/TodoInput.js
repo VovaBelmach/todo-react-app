@@ -1,6 +1,6 @@
 import React from "react";
-import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import useInput from "../../hooks/use-input";
 import { addTodo } from "../../../stores/todosSlice";
 import Card from "../../UI/Card/Card";
 import Checkbox from "../../UI/Checkbox/Checkbox";
@@ -11,16 +11,20 @@ import {
 } from "../../../constants";
 
 const TodoInput = () => {
-  const todoInputRef = useRef();
-  const [error, setError] = useState("");
+  const {
+    value: enteredTodo,
+    isValid: enteredTodoIsValid,
+    hasError: todoInputHasError,
+    valueChangeHandler: todoChangeHandler,
+    inputBlurHandler: todoBlurHandler,
+    reset: resetTodoInput,
+  } = useInput((value) => value.trim() !== "");
   const dispatch = useDispatch();
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    const enteredTodo = todoInputRef.current.value;
 
-    if (enteredTodo.trim().length === 0) {
-      setError(TODO_INPUT_EMPTY_ERROR_MESSAGE);
+    if (!enteredTodoIsValid) {
       return;
     }
 
@@ -30,11 +34,7 @@ const TodoInput = () => {
       })
     );
 
-    todoInputRef.current.value = "";
-  };
-
-  const onChangeHandler = () => {
-    setError("");
+    resetTodoInput();
   };
 
   return (
@@ -44,12 +44,17 @@ const TodoInput = () => {
         <input
           type="text"
           name="todo-input"
+          value={enteredTodo}
           placeholder={TODO_INPUT_PLACEHOLDER_TEXT}
-          ref={todoInputRef}
-          onChange={onChangeHandler}
+          onChange={todoChangeHandler}
+          onBlur={todoBlurHandler}
         />
       </form>
-      <span className={styles["error-message"]}>{error}</span>
+      {todoInputHasError && (
+        <span className={styles["error-message"]}>
+          {TODO_INPUT_EMPTY_ERROR_MESSAGE}
+        </span>
+      )}
     </Card>
   );
 };
