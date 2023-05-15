@@ -47,11 +47,11 @@ const TodoItem = (props) => {
       <Checkbox
         id={props.id}
         name={props.id}
+        description={props.description}
         isCompleted={isCompleted}
         isDisabled={false}
         onClick={onCompleteHandler}
       />
-      <label htmlFor={props.id}>{props.description}</label>
       <Button className={styles["delete-btn"]} onClick={onDeleteHandler}>
         {TODO_ITEM_DELETE_BUTTON_NAME}
       </Button>

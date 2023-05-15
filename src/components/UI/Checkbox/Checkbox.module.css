@@ -1,3 +1,8 @@
+label {
+    display: flex;
+    align-items: center;
+}
+
 .checkbox {
     appearance: none;
     border: 2px solid #ccc;

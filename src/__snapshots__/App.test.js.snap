@@ -29,12 +29,14 @@ Array [
           aria-label="form"
           onSubmit={[Function]}
         >
-          <input
-            className="checkbox"
-            disabled={true}
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              disabled={true}
+              onChange={[Function]}
+              type="checkbox"
+            />
+          </label>
           <input
             name="todo-input"
             onBlur={[Function]}
