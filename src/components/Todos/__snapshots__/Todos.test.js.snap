@@ -43,7 +43,7 @@ exports[`Todos should renders correctly 1`] = `
       >
         <li>
           <button
-            class="button "
+            class="button"
             type="button"
             value="All"
           >
@@ -52,7 +52,7 @@ exports[`Todos should renders correctly 1`] = `
         </li>
         <li>
           <button
-            class="button "
+            class="button"
             type="button"
             value="Active"
           >
@@ -61,7 +61,7 @@ exports[`Todos should renders correctly 1`] = `
         </li>
         <li>
           <button
-            class="button "
+            class="button"
             type="button"
             value="Completed"
           >

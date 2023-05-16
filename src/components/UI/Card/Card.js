@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Card.module.css";
+import classNames from "classnames";
 
 const Card = (props) => {
   return (
-    <div className={`${styles.card} ${props.className ?? ""}`}>
+    <div className={classNames(styles.card, props.className)}>
       {props.children}
     </div>
   );

@@ -65,7 +65,7 @@ Array [
           >
             <li>
               <button
-                className="button "
+                className="button"
                 onClick={[Function]}
                 type="button"
                 value="All"
@@ -75,7 +75,7 @@ Array [
             </li>
             <li>
               <button
-                className="button "
+                className="button"
                 onClick={[Function]}
                 type="button"
                 value="Active"
@@ -85,7 +85,7 @@ Array [
             </li>
             <li>
               <button
-                className="button "
+                className="button"
                 onClick={[Function]}
                 type="button"
                 value="Completed"

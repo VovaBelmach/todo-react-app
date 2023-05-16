@@ -63,7 +63,7 @@ exports[`TodoList component should render correctly when there are filtered todo
       >
         <li>
           <button
-            class="button "
+            class="button"
             type="button"
             value="All"
           >
@@ -72,7 +72,7 @@ exports[`TodoList component should render correctly when there are filtered todo
         </li>
         <li>
           <button
-            class="button "
+            class="button"
             type="button"
             value="Active"
           >
@@ -81,7 +81,7 @@ exports[`TodoList component should render correctly when there are filtered todo
         </li>
         <li>
           <button
-            class="button "
+            class="button"
             type="button"
             value="Completed"
           >
@@ -120,7 +120,7 @@ exports[`TodoList component should render correctly when there are no filtered t
       >
         <li>
           <button
-            class="button "
+            class="button"
             type="button"
             value="All"
           >
@@ -129,7 +129,7 @@ exports[`TodoList component should render correctly when there are no filtered t
         </li>
         <li>
           <button
-            class="button "
+            class="button"
             type="button"
             value="Active"
           >
@@ -138,7 +138,7 @@ exports[`TodoList component should render correctly when there are no filtered t
         </li>
         <li>
           <button
-            class="button "
+            class="button"
             type="button"
             value="Completed"
           >

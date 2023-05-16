@@ -12,7 +12,7 @@ exports[`TodoFooter component should match snapshot with no todos 1`] = `
   >
     <li>
       <button
-        class="button "
+        class="button"
         type="button"
         value="All"
       >
@@ -21,7 +21,7 @@ exports[`TodoFooter component should match snapshot with no todos 1`] = `
     </li>
     <li>
       <button
-        class="button "
+        class="button"
         type="button"
         value="Active"
       >
@@ -30,7 +30,7 @@ exports[`TodoFooter component should match snapshot with no todos 1`] = `
     </li>
     <li>
       <button
-        class="button "
+        class="button"
         type="button"
         value="Completed"
       >
@@ -60,7 +60,7 @@ exports[`TodoFooter component should match snapshot with todo count 1`] = `
   >
     <li>
       <button
-        class="button "
+        class="button"
         type="button"
         value="All"
       >
@@ -69,7 +69,7 @@ exports[`TodoFooter component should match snapshot with todo count 1`] = `
     </li>
     <li>
       <button
-        class="button "
+        class="button"
         type="button"
         value="Active"
       >
@@ -78,7 +78,7 @@ exports[`TodoFooter component should match snapshot with todo count 1`] = `
     </li>
     <li>
       <button
-        class="button "
+        class="button"
         type="button"
         value="Completed"
       >
