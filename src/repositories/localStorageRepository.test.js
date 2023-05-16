@@ -8,7 +8,7 @@ describe("localStorageRepository", () => {
     const items = [1, 2, 3];
     const localStorageName = "test";
 
-    saveItemsToLocalStorage(items, localStorageName);
+    saveItemsToLocalStorage(localStorageName, items);
 
     const storedItems = JSON.parse(getItemsFromLocalStorage(localStorageName));
     expect(storedItems).toEqual(items);

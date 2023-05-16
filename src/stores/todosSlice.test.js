@@ -19,7 +19,7 @@ const mockTodo = {
 };
 
 const setup = (
-  initialState = { todos: [], filterValue: TODO_FILTER_ALL_BUTTON_NAME }
+  initialState = { items: [], filterValue: TODO_FILTER_ALL_BUTTON_NAME }
 ) => {
   return configureStore({
     reducer: {
@@ -42,17 +42,17 @@ describe("todosSlice", () => {
         description: "New todo",
       })
     );
-    const todos = filteredTodosSelector(store.getState());
+    const items = filteredTodosSelector(store.getState());
 
     // Assert
-    expect(todos).toHaveLength(1);
-    expect(todos[0].description).toEqual("New todo");
+    expect(items).toHaveLength(1);
+    expect(items[0].description).toEqual("New todo");
   });
 
   it("should mark a todo as complete", () => {
     // Arrange
     const store = setup({
-      todos: [mockTodo],
+      items: [mockTodo],
     });
 
     // Act
@@ -61,16 +61,16 @@ describe("todosSlice", () => {
         id: mockTodo.id,
       })
     );
-    const todos = filteredTodosSelector(store.getState());
+    const items = filteredTodosSelector(store.getState());
 
     // Assert
-    expect(todos[0].isCompleted).toBe(true);
+    expect(items[0].isCompleted).toBe(true);
   });
 
   it("should delete a todo", () => {
     // Arrange
     const store = setup({
-      todos: [mockTodo],
+      items: [mockTodo],
     });
 
     // Act
@@ -79,10 +79,10 @@ describe("todosSlice", () => {
         id: mockTodo.id,
       })
     );
-    const todos = filteredTodosSelector(store.getState());
+    const items = filteredTodosSelector(store.getState());
 
     // Assert
-    expect(todos).toHaveLength(0);
+    expect(items).toHaveLength(0);
   });
 
   it("should set the filter", () => {
@@ -105,7 +105,7 @@ describe("todosSlice", () => {
       isCompleted: false,
     };
     const store = setup({
-      todos: [mockTodo, mockTodo2],
+      items: [mockTodo, mockTodo2],
     });
 
     // Act
@@ -115,10 +115,10 @@ describe("todosSlice", () => {
         droppedIndex: 1,
       })
     );
-    const todos = filteredTodosSelector(store.getState());
+    const items = filteredTodosSelector(store.getState());
 
     // Assert
-    expect(todos[0].id).toEqual("456");
-    expect(todos[1].id).toEqual("123");
+    expect(items[0].id).toEqual("456");
+    expect(items[1].id).toEqual("123");
   });
 });

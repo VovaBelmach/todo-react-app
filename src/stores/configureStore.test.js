@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import todoReducer from "./todosSlice";
-import { loadTodosStateFromLocalStorage } from "./helpers/todoLocalStorage.helper";
 import { saveItemsToLocalStorage } from "../repositories/localStorageRepository";
 import {
   TODOS_LOCAL_STORAGE_NAME,
@@ -18,7 +17,7 @@ describe("configureStore", () => {
 
     // Assert
     expect(store.getState().todos).toEqual({
-      todos: [],
+      items: [],
       filterValue: TODO_FILTER_ALL_BUTTON_NAME,
     });
   });
@@ -27,7 +26,7 @@ describe("configureStore", () => {
     // Arrange
     const storedState = {
       todos: {
-        todos: [
+        items: [
           {
             id: "123",
             description: "Buy groceries",
@@ -38,17 +37,21 @@ describe("configureStore", () => {
       },
     };
 
-    saveItemsToLocalStorage(storedState.todos.todos, TODOS_LOCAL_STORAGE_NAME);
+    saveItemsToLocalStorage(
+      TODOS_LOCAL_STORAGE_NAME,
+      storedState.todos.items
+    );
 
     const store = configureStore({
       reducer: {
         todos: todoReducer,
       },
-      preloadedState: loadTodosStateFromLocalStorage(),
     });
 
+
+
     // Assert
-    expect(store.getState().todos).toEqual(storedState.todos);
+    expect(store.getState().items).toEqual(storedState.items);
     localStorage.removeItem(TODOS_LOCAL_STORAGE_NAME);
   });
 });

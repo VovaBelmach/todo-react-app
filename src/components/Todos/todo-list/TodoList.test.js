@@ -17,7 +17,7 @@ describe("TodoList component", () => {
   beforeEach(() => {
     store = mockStore({
       todos: {
-        todos: [
+        items: [
           {
             id: "a74ba32f-3868-48f9-bb1a-2f8267844fc1",
             description: "Learn React",
@@ -38,7 +38,7 @@ describe("TodoList component", () => {
     // Arrange
     store = mockStore({
       todos: {
-        todos: [],
+        items: [],
         filter: TODO_FILTER_ALL_BUTTON_NAME,
       },
     });
@@ -82,7 +82,7 @@ describe("TodoList component", () => {
     // Arrange
     store = mockStore({
       todos: {
-        todos: [],
+        items: [],
         filter: TODO_FILTER_ALL_BUTTON_NAME,
       },
     });

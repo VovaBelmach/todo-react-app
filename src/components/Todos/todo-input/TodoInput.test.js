@@ -72,8 +72,8 @@ describe("TodoInput component", () => {
     const enteredTodo = "Test todo";
     fireEvent.change(inputElement, { target: { value: enteredTodo } });
     fireEvent.submit(formElement);
-    const state = store.getState();
-    const todos = state.todos.todos;
+    const state = store.getState().todos;
+    const todos = state.items;
 
     // Assert
     expect(todos).toHaveLength(1);
