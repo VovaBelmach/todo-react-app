@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import todoReducer from "./todosSlice";
-import { loadTodosStateFromLocalStorage } from "../helpers/todoLocalStorage.helper";
+import { loadTodosStateFromLocalStorage } from "./helpers/todoLocalStorage.helper";
 import { saveItemsToLocalStorage } from "../repositories/localStorageRepository";
 import {
   TODOS_LOCAL_STORAGE_NAME,
