@@ -4,7 +4,6 @@ exports[`Checkbox should renders correctly 1`] = `
 <label>
   <input
     className="checkbox"
-    onChange={[Function]}
     type="checkbox"
   />
 </label>

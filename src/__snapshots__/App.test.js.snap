@@ -33,19 +33,20 @@ Array [
             <input
               className="checkbox"
               disabled={true}
-              onChange={[Function]}
               type="checkbox"
             />
           </label>
           <input
             name="todo-input"
-            onBlur={[Function]}
             onChange={[Function]}
             placeholder="What should be done?"
             type="text"
             value=""
           />
         </form>
+        <span
+          className="error-message"
+        />
       </div>
       <div
         className="card todo-list"

@@ -8,15 +8,13 @@ exports[`TodoItem component should match snapshot 1`] = `
     role="todo-item"
     style="opacity: 1;"
   >
-    <input
-      class="checkbox"
-      id="1"
-      name="1"
-      type="checkbox"
-    />
-    <label
-      for="1"
-    >
+    <label>
+      <input
+        class="checkbox"
+        id="1"
+        name="1"
+        type="checkbox"
+      />
       Test Todo
     </label>
     <button

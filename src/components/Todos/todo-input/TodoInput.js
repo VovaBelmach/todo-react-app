@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import useInput from "../../hooks/use-input";
 import { addTodo } from "../../../stores/todosSlice";
 import Card from "../../UI/Card/Card";
-import Checkbox from "../../UI/Checkbox/Checkbox";
+import CustomTodoInput from "../../UI/CustomTodoInput/CustomTodoInput";
 import styles from "./TodoInput.module.css";
 import {
   TODO_INPUT_EMPTY_ERROR_MESSAGE,
@@ -11,20 +10,16 @@ import {
 } from "../../../constants";
 
 const TodoInput = () => {
-  const {
-    value: enteredTodo,
-    isValid: enteredTodoIsValid,
-    hasError: todoInputHasError,
-    valueChangeHandler: todoChangeHandler,
-    inputBlurHandler: todoBlurHandler,
-    reset: resetTodoInput,
-  } = useInput((value) => value.trim() !== "");
+  const [enteredTodo, setEnteredTodo] = useState("");
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
+  const todoInputName = "todo-input";
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    if (!enteredTodoIsValid) {
+    if (enteredTodo.trim().length === 0) {
+      setError(TODO_INPUT_EMPTY_ERROR_MESSAGE);
       return;
     }
 
@@ -34,27 +29,25 @@ const TodoInput = () => {
       })
     );
 
-    resetTodoInput();
+    setEnteredTodo("");
+  };
+
+  const todoChangeHandler = (event) => {
+    setEnteredTodo(event.target.value);
+    setError("");
   };
 
   return (
     <Card className={styles["todo-input"]}>
       <form aria-label="form" onSubmit={onSubmitHandler}>
-        <Checkbox isDisabled={true} />
-        <input
-          type="text"
-          name="todo-input"
+        <CustomTodoInput
+          name={todoInputName}
           value={enteredTodo}
           placeholder={TODO_INPUT_PLACEHOLDER_TEXT}
-          onChange={todoChangeHandler}
-          onBlur={todoBlurHandler}
+          onChangeHandler={todoChangeHandler}
         />
       </form>
-      {todoInputHasError && (
-        <span className={styles["error-message"]}>
-          {TODO_INPUT_EMPTY_ERROR_MESSAGE}
-        </span>
-      )}
+      <span className={styles["error-message"]}>{error}</span>
     </Card>
   );
 };

@@ -8,17 +8,19 @@ exports[`TodoInput component should render correctly 1`] = `
     aria-label="form"
     onSubmit={[Function]}
   >
-    <input
-      className="checkbox"
-      disabled={true}
-      onChange={[Function]}
-      type="checkbox"
-    />
+    <label>
+      <input
+        className="checkbox"
+        disabled={true}
+        type="checkbox"
+      />
+    </label>
     <input
       name="todo-input"
       onChange={[Function]}
       placeholder="What should be done?"
       type="text"
+      value=""
     />
   </form>
   <span

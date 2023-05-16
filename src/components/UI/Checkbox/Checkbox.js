@@ -12,9 +12,8 @@ const Checkbox = (props) => {
           id={props.id}
           name={props.id}
           checked={props.isCompleted}
-          onChange={() => {}}
-          onClick={props.onClick}
           disabled={props.isDisabled}
+          onChange={props.onChange}
         />
         {props.description}
       </label>
@@ -27,7 +26,7 @@ Checkbox.propTypes = {
   description: PropTypes.any,
   isCompleted: PropTypes.bool,
   isDisabled: PropTypes.bool,
-  onClick: PropTypes.func,
+  onChange: PropTypes.func,
 };
 
 export default Checkbox;

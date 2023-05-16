@@ -8,15 +8,18 @@ exports[`Todos should renders correctly 1`] = `
     <form
       aria-label="form"
     >
-      <input
-        class="checkbox"
-        disabled=""
-        type="checkbox"
-      />
+      <label>
+        <input
+          class="checkbox"
+          disabled=""
+          type="checkbox"
+        />
+      </label>
       <input
         name="todo-input"
         placeholder="What should be done?"
         type="text"
+        value=""
       />
     </form>
     <span

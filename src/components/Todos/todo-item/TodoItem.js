@@ -50,7 +50,7 @@ const TodoItem = (props) => {
         description={props.description}
         isCompleted={isCompleted}
         isDisabled={false}
-        onClick={onCompleteHandler}
+        onChange={onCompleteHandler}
       />
       <Button className={styles["delete-btn"]} onClick={onDeleteHandler}>
         {TODO_ITEM_DELETE_BUTTON_NAME}

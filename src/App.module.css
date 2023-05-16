@@ -33,16 +33,3 @@
     min-width: 300px;
   }
 }
-
-.title {
-  font-weight: 100;
-  letter-spacing: 0.3rem;
-  color: #fff;
-}
-
-.footer {
-  font-size: 14px;
-  color: #999;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  text-align: center;
-}
