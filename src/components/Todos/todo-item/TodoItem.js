@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTodo, completeTodo } from "../../../stores/todosSlice";
 import Checkbox from "../../UI/Checkbox/Checkbox";
@@ -9,7 +8,6 @@ import styles from "./TodoItem.module.css";
 import { TODO_ITEM_DELETE_BUTTON_NAME } from "../../../constants";
 
 const TodoItem = (props) => {
-  const [isCompleted, setCompletition] = useState(props.isCompleted);
   const dispatch = useDispatch();
   const role = "todo-item";
 
@@ -29,12 +27,11 @@ const TodoItem = (props) => {
         id: props.id,
       })
     );
-    setCompletition(!isCompleted);
   };
 
   return (
     <li
-      className={isCompleted ? "complete" : "incomplete"}
+      className={props.isCompleted ? "complete" : "incomplete"}
       style={{ opacity: props.draggedIndex === props.index ? 0.5 : 1 }}
       role={role}
       key={props.id}
@@ -48,7 +45,7 @@ const TodoItem = (props) => {
         id={props.id}
         name={props.id}
         description={props.description}
-        isCompleted={isCompleted}
+        isCompleted={props.isCompleted}
         isDisabled={false}
         onChange={onCompleteHandler}
       />

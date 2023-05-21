@@ -33,10 +33,6 @@ export const todosSlice = createSlice({
       };
       state.items.push(newTodo);
     },
-    deleteTodo: (state, action) => {
-      const { id } = action.payload;
-      state.items = state.items.filter((todo) => todo.id !== id);
-    },
     completeTodo: (state, action) => {
       const index = state.items.findIndex(
         (item) => item.id === action.payload.id
@@ -45,11 +41,28 @@ export const todosSlice = createSlice({
         state.items[index].isCompleted = !state.items[index].isCompleted;
       }
     },
+    deleteTodo: (state, action) => {
+      const { id } = action.payload;
+      state.items = state.items.filter((todo) => todo.id !== id);
+    },
+    deleteAllComlpetedTodos: (state) => {
+      state.items = state.items.filter((todo) => !todo.isCompleted)
+    },
     setFilter: (state, action) => {
       state.filterValue = action.payload;
     },
     reorderTodos: (state, action) => {
-      const { draggedIndex, droppedIndex } = action.payload;
+      let { draggedIndex, droppedIndex, filteredTodos } = action.payload;
+      const todos = state.items;
+
+      if (state.filterValue !== TODO_FILTER_ALL_BUTTON_NAME) {
+        const graggedTodoId = filteredTodos[draggedIndex].id;
+        const droppedTodoId = filteredTodos[droppedIndex].id;
+
+        draggedIndex = todos.findIndex(property => property.id === graggedTodoId);
+        droppedIndex = todos.findIndex(property => property.id === droppedTodoId);
+      }
+
       const draggedTodo = state.items[draggedIndex];
       const newTodos = [...state.items];
       newTodos.splice(draggedIndex, 1);
@@ -59,7 +72,7 @@ export const todosSlice = createSlice({
   },
 });
 
-export const { addTodo, deleteTodo, completeTodo, setFilter, reorderTodos } =
+export const { addTodo, completeTodo, deleteTodo, deleteAllComlpetedTodos, setFilter, reorderTodos } =
   todosSlice.actions;
 
 export default todosSlice.reducer;

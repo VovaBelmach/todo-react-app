@@ -2,6 +2,7 @@
 
 exports[`TextInput should renders correctly 1`] = `
 <input
+  className="textInput"
   name="test"
   type="text"
 />

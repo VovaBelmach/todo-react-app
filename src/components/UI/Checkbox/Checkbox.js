@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import styles from "./Checkbox.module.css";
 
 const Checkbox = (props) => {
+  const labelStyle = props.isCompleted ? styles.crossedOut : '';
+  
   return (
     <>
-      <label>
+      <label className={labelStyle}>
         <input
           type="checkbox"
           className={styles.checkbox}

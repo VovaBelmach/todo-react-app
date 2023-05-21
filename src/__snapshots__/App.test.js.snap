@@ -29,7 +29,9 @@ Array [
           aria-label="form"
           onSubmit={[Function]}
         >
-          <label>
+          <label
+            className=""
+          >
             <input
               className="checkbox"
               disabled={true}
@@ -37,6 +39,7 @@ Array [
             />
           </label>
           <input
+            className="textInput"
             name="todo-input"
             onChange={[Function]}
             placeholder="What should be done?"

@@ -109,6 +109,7 @@ describe("todosSlice", () => {
     });
 
     // Act
+    store.dispatch(setFilter(TODO_FILTER_ALL_BUTTON_NAME));
     store.dispatch(
       reorderTodos({
         draggedIndex: 0,

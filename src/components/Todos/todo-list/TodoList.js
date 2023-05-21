@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  deleteTodo,
   setFilter,
   filteredTodosSelector,
   reorderTodos,
@@ -22,20 +21,6 @@ const TodoList = () => {
     dispatch(setFilter(filterProperty));
   };
 
-  const onDeleteCompletedHandler = () => {
-    const completedTodoIds = filteredTodos
-      .filter((todo) => todo.isCompleted)
-      .map((todo) => todo.id);
-
-    completedTodoIds.forEach((id) => {
-      dispatch(
-        deleteTodo({
-          id: id,
-        })
-      );
-    });
-  };
-
   const onDragStartHandle = (event, index) => {
     setDraggedIndex(index);
     event.dataTransfer.setData("text/plain", index);
@@ -48,10 +33,12 @@ const TodoList = () => {
 
   const onDropHandle = (event, index) => {
     event.preventDefault();
+
     dispatch(
       reorderTodos({
         draggedIndex: draggedIndex,
         droppedIndex: index,
+        filteredTodos: filteredTodos
       })
     );
   };
@@ -86,7 +73,6 @@ const TodoList = () => {
       <TodoFooter
         countTodos={filteredTodos.filter((todo) => !todo.isCompleted).length}
         onFilterHandler={onFilterHandler}
-        onDeleteCompletedHandler={onDeleteCompletedHandler}
       />
     </Card>
   );

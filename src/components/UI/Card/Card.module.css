@@ -35,15 +35,6 @@
     border-bottom: none;
 }
 
-.card li label {
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.card li input[type="checkbox"]:checked+label {
-    text-decoration: line-through;
-}
-
 .card input[type="text"] {
     font: inherit;
     display: block;

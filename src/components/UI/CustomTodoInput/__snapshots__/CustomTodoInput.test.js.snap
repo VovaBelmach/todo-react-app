@@ -2,7 +2,9 @@
 
 exports[`CustomTodoInput should renders correctly 1`] = `
 Array [
-  <label>
+  <label
+    className=""
+  >
     <input
       className="checkbox"
       disabled={true}
@@ -10,6 +12,7 @@ Array [
     />
   </label>,
   <input
+    className="textInput"
     name="test"
     type="text"
   />,
