@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomTodoInput should renders correctly 1`] = `
+Array [
+  <label
+    className=""
+  >
+    <input
+      className="checkbox"
+      disabled={true}
+      type="checkbox"
+    />
+  </label>,
+  <input
+    className="textInput"
+    name="test"
+    type="text"
+  />,
+]
+`;

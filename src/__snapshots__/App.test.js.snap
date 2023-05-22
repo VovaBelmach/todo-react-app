@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should renders correctly 1`] = `
+Array [
+  <div
+    className="app-header"
+    data-testid="app-header"
+  />,
+  <div
+    className="app"
+    data-testid="app"
+  >
+    <main
+      className="app-content"
+      data-testid="app-content"
+    >
+      <header>
+        <h1
+          className="title"
+          data-testid="title"
+        >
+          TODO
+        </h1>
+      </header>
+      <div
+        className="card todo-input"
+      >
+        <form
+          aria-label="form"
+          onSubmit={[Function]}
+        >
+          <label
+            className=""
+          >
+            <input
+              className="checkbox"
+              disabled={true}
+              type="checkbox"
+            />
+          </label>
+          <input
+            className="textInput"
+            name="todo-input"
+            onChange={[Function]}
+            placeholder="What should be done?"
+            type="text"
+            value=""
+          />
+        </form>
+        <span
+          className="error-message"
+        />
+      </div>
+      <div
+        className="card todo-list"
+      >
+        <p>
+          All todos completed! Add a todo and it will be displayed here.
+        </p>
+        <footer
+          className="todo-footer"
+        >
+          <span>
+            All done!
+          </span>
+          <ul
+            className="todo-filter"
+          >
+            <li>
+              <button
+                className="button selected"
+                onClick={[Function]}
+                type="button"
+                value="All"
+              >
+                All
+              </button>
+            </li>
+            <li>
+              <button
+                className="button"
+                onClick={[Function]}
+                type="button"
+                value="Active"
+              >
+                Active
+              </button>
+            </li>
+            <li>
+              <button
+                className="button"
+                onClick={[Function]}
+                type="button"
+                value="Completed"
+              >
+                Completed
+              </button>
+            </li>
+          </ul>
+          <button
+            className="button todo-clear-completed"
+            onClick={[Function]}
+            type="button"
+            value="Clear completed"
+          >
+            Clear completed
+          </button>
+        </footer>
+      </div>
+      <footer>
+        <p
+          className="footer"
+          data-testid="footer"
+        >
+          Drag and drop to reorder list.
+        </p>
+      </footer>
+    </main>
+  </div>,
+]
+`;

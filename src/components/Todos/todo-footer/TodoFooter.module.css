@@ -1,0 +1,16 @@
+.todo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.todo-footer span {
+    color: #999;
+}
+
+.todo-clear-completed:hover {
+    color: #f44336;
+}

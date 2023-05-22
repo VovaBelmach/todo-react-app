@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList component should render correctly when there are filtered todos 1`] = `
+<div>
+  <div
+    class="card todo-list"
+  >
+    <ul>
+      <li
+        class="incomplete"
+        draggable="true"
+        role="todo-item"
+        style="opacity: 1;"
+      >
+        <label
+          class=""
+        >
+          <input
+            class="checkbox"
+            id="a74ba32f-3868-48f9-bb1a-2f8267844fc1"
+            name="a74ba32f-3868-48f9-bb1a-2f8267844fc1"
+            type="checkbox"
+          />
+          Learn React
+        </label>
+        <button
+          class="button delete-btn"
+          type="button"
+        >
+          X
+        </button>
+      </li>
+      <li
+        class="complete"
+        draggable="true"
+        role="todo-item"
+        style="opacity: 1;"
+      >
+        <label
+          class="crossedOut"
+        >
+          <input
+            checked=""
+            class="checkbox"
+            id="c4eb6856-96af-41ef-b497-7424120cbbc4"
+            name="c4eb6856-96af-41ef-b497-7424120cbbc4"
+            type="checkbox"
+          />
+          Write unit tests
+        </label>
+        <button
+          class="button delete-btn"
+          type="button"
+        >
+          X
+        </button>
+      </li>
+    </ul>
+    <footer
+      class="todo-footer"
+    >
+      <span>
+        1 todo left
+      </span>
+      <ul
+        class="todo-filter"
+      >
+        <li>
+          <button
+            class="button selected"
+            type="button"
+            value="All"
+          >
+            All
+          </button>
+        </li>
+        <li>
+          <button
+            class="button"
+            type="button"
+            value="Active"
+          >
+            Active
+          </button>
+        </li>
+        <li>
+          <button
+            class="button"
+            type="button"
+            value="Completed"
+          >
+            Completed
+          </button>
+        </li>
+      </ul>
+      <button
+        class="button todo-clear-completed"
+        type="button"
+        value="Clear completed"
+      >
+        Clear completed
+      </button>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`TodoList component should render correctly when there are no filtered todos 1`] = `
+<div>
+  <div
+    class="card todo-list"
+  >
+    <p>
+      All todos completed! Add a todo and it will be displayed here.
+    </p>
+    <footer
+      class="todo-footer"
+    >
+      <span>
+        All done!
+      </span>
+      <ul
+        class="todo-filter"
+      >
+        <li>
+          <button
+            class="button selected"
+            type="button"
+            value="All"
+          >
+            All
+          </button>
+        </li>
+        <li>
+          <button
+            class="button"
+            type="button"
+            value="Active"
+          >
+            Active
+          </button>
+        </li>
+        <li>
+          <button
+            class="button"
+            type="button"
+            value="Completed"
+          >
+            Completed
+          </button>
+        </li>
+      </ul>
+      <button
+        class="button todo-clear-completed"
+        type="button"
+        value="Clear completed"
+      >
+        Clear completed
+      </button>
+    </footer>
+  </div>
+</div>
+`;

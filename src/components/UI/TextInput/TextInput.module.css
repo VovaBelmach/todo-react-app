@@ -1,0 +1,13 @@
+.textInput {
+    font: inherit;
+    display: block;
+    width: 90%;
+    padding: 0.15rem;
+    border: none;
+    outline: none;
+}
+
+.textInput:focus {
+    outline: none;
+    border-color: #4f005f;
+}

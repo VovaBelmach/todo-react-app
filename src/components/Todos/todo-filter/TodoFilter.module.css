@@ -1,0 +1,24 @@
+.todo-filter {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.todo-filter li {
+    margin-right: 5px;
+    padding: 0;
+    border-bottom: 0;
+}
+
+.todo-filter button:hover {
+    color: #333;
+}
+
+.todo-filter button:active {
+    color: #000;
+}
+
+.todo-filter .selected {
+    font-weight: bold;
+}

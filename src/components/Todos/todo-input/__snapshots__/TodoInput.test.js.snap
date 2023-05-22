@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoInput component should render correctly 1`] = `
+<div
+  className="card todo-input"
+>
+  <form
+    aria-label="form"
+    onSubmit={[Function]}
+  >
+    <label
+      className=""
+    >
+      <input
+        className="checkbox"
+        disabled={true}
+        type="checkbox"
+      />
+    </label>
+    <input
+      className="textInput"
+      name="todo-input"
+      onChange={[Function]}
+      placeholder="What should be done?"
+      type="text"
+      value=""
+    />
+  </form>
+  <span
+    className="error-message"
+  />
+</div>
+`;

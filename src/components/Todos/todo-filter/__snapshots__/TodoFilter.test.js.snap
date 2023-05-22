@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoFilter should renders correctly 1`] = `
+<ul
+  className="todo-filter"
+>
+  <li>
+    <button
+      className="button selected"
+      onClick={[Function]}
+      type="button"
+      value="All"
+    >
+      All
+    </button>
+  </li>
+  <li>
+    <button
+      className="button"
+      onClick={[Function]}
+      type="button"
+      value="Active"
+    >
+      Active
+    </button>
+  </li>
+  <li>
+    <button
+      className="button"
+      onClick={[Function]}
+      type="button"
+      value="Completed"
+    >
+      Completed
+    </button>
+  </li>
+</ul>
+`;

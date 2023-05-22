@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem component should match snapshot 1`] = `
+<div>
+  <li
+    class="incomplete"
+    draggable="true"
+    role="todo-item"
+    style="opacity: 1;"
+  >
+    <label
+      class=""
+    >
+      <input
+        class="checkbox"
+        id="1"
+        name="1"
+        type="checkbox"
+      />
+      Test Todo
+    </label>
+    <button
+      class="button delete-btn"
+      type="button"
+    >
+      X
+    </button>
+  </li>
+</div>
+`;
