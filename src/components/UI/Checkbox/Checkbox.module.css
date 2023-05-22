@@ -9,23 +9,20 @@ label {
 }
 
 .checkbox {
-    appearance: none;
-    border: 2px solid #ccc;
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    outline: none;
+    cursor: pointer;    
     margin-right: 10px;
-    cursor: pointer;
-    position: relative;
 }
 
-.checkbox:checked::before {
-    content: "";
-    display: block;
-    position: absolute;
-    inset: 2px;
+.checkbox:checked {
     background-color: #0080ff;
-    border-radius: 50%;
 }
 
 .checkbox:disabled {
