@@ -6,7 +6,7 @@ exports[`TodoFilter should renders correctly 1`] = `
 >
   <li>
     <button
-      className="button"
+      className="button selected"
       onClick={[Function]}
       type="button"
       value="All"

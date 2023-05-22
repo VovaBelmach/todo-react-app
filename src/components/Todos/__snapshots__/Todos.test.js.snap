@@ -46,7 +46,7 @@ exports[`Todos should renders correctly 1`] = `
       >
         <li>
           <button
-            class="button"
+            class="button selected"
             type="button"
             value="All"
           >

@@ -68,7 +68,7 @@ Array [
           >
             <li>
               <button
-                className="button"
+                className="button selected"
                 onClick={[Function]}
                 type="button"
                 value="All"

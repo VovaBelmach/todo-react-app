@@ -18,3 +18,7 @@
 .todo-filter button:active {
     color: #000;
 }
+
+.todo-filter .selected {
+    font-weight: bold;
+}

@@ -67,7 +67,7 @@ exports[`TodoList component should render correctly when there are filtered todo
       >
         <li>
           <button
-            class="button"
+            class="button selected"
             type="button"
             value="All"
           >
@@ -124,7 +124,7 @@ exports[`TodoList component should render correctly when there are no filtered t
       >
         <li>
           <button
-            class="button"
+            class="button selected"
             type="button"
             value="All"
           >
